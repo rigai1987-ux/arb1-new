@@ -1,0 +1,17 @@
+c:\visual projects\arb1\src\SpreadAggregator.Infrastructure\bin\Debug\net9.0\SpreadAggregator.Infrastructure.deps.json
+c:\visual projects\arb1\src\SpreadAggregator.Infrastructure\bin\Debug\net9.0\SpreadAggregator.Infrastructure.dll
+c:\visual projects\arb1\src\SpreadAggregator.Infrastructure\bin\Debug\net9.0\SpreadAggregator.Infrastructure.pdb
+c:\visual projects\arb1\src\SpreadAggregator.Infrastructure\bin\Debug\net9.0\SpreadAggregator.Application.dll
+c:\visual projects\arb1\src\SpreadAggregator.Infrastructure\bin\Debug\net9.0\SpreadAggregator.Domain.dll
+c:\visual projects\arb1\src\SpreadAggregator.Infrastructure\bin\Debug\net9.0\SpreadAggregator.Application.pdb
+c:\visual projects\arb1\src\SpreadAggregator.Infrastructure\bin\Debug\net9.0\SpreadAggregator.Domain.pdb
+c:\visual projects\arb1\src\SpreadAggregator.Infrastructure\obj\Debug\net9.0\SpreadAggregator.Infrastructure.csproj.AssemblyReference.cache
+c:\visual projects\arb1\src\SpreadAggregator.Infrastructure\obj\Debug\net9.0\SpreadAggregator.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+c:\visual projects\arb1\src\SpreadAggregator.Infrastructure\obj\Debug\net9.0\SpreadAggregator.Infrastructure.AssemblyInfoInputs.cache
+c:\visual projects\arb1\src\SpreadAggregator.Infrastructure\obj\Debug\net9.0\SpreadAggregator.Infrastructure.AssemblyInfo.cs
+c:\visual projects\arb1\src\SpreadAggregator.Infrastructure\obj\Debug\net9.0\SpreadAggregator.Infrastructure.csproj.CoreCompileInputs.cache
+c:\visual projects\arb1\src\SpreadAggregator.Infrastructure\obj\Debug\net9.0\SpreadAg.6F5B6FF7.Up2Date
+c:\visual projects\arb1\src\SpreadAggregator.Infrastructure\obj\Debug\net9.0\SpreadAggregator.Infrastructure.dll
+c:\visual projects\arb1\src\SpreadAggregator.Infrastructure\obj\Debug\net9.0\refint\SpreadAggregator.Infrastructure.dll
+c:\visual projects\arb1\src\SpreadAggregator.Infrastructure\obj\Debug\net9.0\SpreadAggregator.Infrastructure.pdb
+c:\visual projects\arb1\src\SpreadAggregator.Infrastructure\obj\Debug\net9.0\ref\SpreadAggregator.Infrastructure.dll
