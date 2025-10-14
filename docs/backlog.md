@@ -1,5 +1,13 @@
 # Backlog - Агрегатор биржевых спредов
 
+## Спринт 3: Интеграция KuCoin
+- [x] **Интеграция с KuCoin:**
+    - [x] Добавлен пакет `Kucoin.Net`.
+    - [x] Создан `KucoinExchangeClient`.
+    - [x] Исправлены ошибки компиляции, связанные со структурой данных `KucoinStreamBestOffers`.
+    - [x] `KucoinExchangeClient` зарегистрирован в DI.
+    - [x] `appsettings.json` обновлен для поддержки KuCoin.
+
 ## Спринт 2: Интеграция MEXC и рефакторинг
 - [x] **Рефакторинг DI и OrchestrationService:**
     - [x] Упрощен `IExchangeClient` (удален метод `GetClient`).
