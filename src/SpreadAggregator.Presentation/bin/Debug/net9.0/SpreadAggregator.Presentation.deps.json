@@ -87,6 +87,17 @@
           }
         }
       },
+      "GateIo.Net/2.10.0": {
+        "dependencies": {
+          "CryptoExchange.Net": "9.9.0"
+        },
+        "runtime": {
+          "lib/net9.0/GateIo.Net.dll": {
+            "assemblyVersion": "2.10.0.0",
+            "fileVersion": "2.10.0.0"
+          }
+        }
+      },
       "JK.Mexc.Net/3.9.0": {
         "dependencies": {
           "CryptoExchange.Net.Protobuf": "9.8.0"
@@ -662,6 +673,7 @@
           "Bybit.Net": "5.9.0",
           "CryptoExchange.Net": "9.9.0",
           "Fleck": "1.2.0",
+          "GateIo.Net": "2.10.0",
           "JK.Mexc.Net": "3.9.0",
           "Kucoin.Net": "7.8.0",
           "OKX.Api": "5.5.1013",
@@ -723,6 +735,13 @@
       "sha512": "sha512-bPLXn6QbLAFoviur6XbrKB0Zn6x04E8VibHXyHZeJsoC7bkUl5DVtzM5cZgDuqHkIrBqAXJyTNJwSNIc6wBJ2Q==",
       "path": "fleck/1.2.0",
       "hashPath": "fleck.1.2.0.nupkg.sha512"
+    },
+    "GateIo.Net/2.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3D4LPSzf/ZtcOq0jxZGOwUiFHpkr5WV0Q5FJ60B2j10NiUUeomqUnZG7fPtzHccm5qUzTlly6H9pq1bkWFDOFQ==",
+      "path": "gateio.net/2.10.0",
+      "hashPath": "gateio.net.2.10.0.nupkg.sha512"
     },
     "JK.Mexc.Net/3.9.0": {
       "type": "package",

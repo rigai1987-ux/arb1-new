@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "AdnUH1dOF4M=",
+  "dgSpecHash": "Qz9fB5E5qg4=",
   "success": true,
   "projectFilePath": "C:\\visual projects\\arb1\\src\\SpreadAggregator.Infrastructure\\SpreadAggregator.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\Георгий\\.nuget\\packages\\cryptoexchange.net\\9.9.0\\cryptoexchange.net.9.9.0.nupkg.sha512",
     "C:\\Users\\Георгий\\.nuget\\packages\\cryptoexchange.net.protobuf\\9.8.0\\cryptoexchange.net.protobuf.9.8.0.nupkg.sha512",
     "C:\\Users\\Георгий\\.nuget\\packages\\fleck\\1.2.0\\fleck.1.2.0.nupkg.sha512",
+    "C:\\Users\\Георгий\\.nuget\\packages\\gateio.net\\2.10.0\\gateio.net.2.10.0.nupkg.sha512",
     "C:\\Users\\Георгий\\.nuget\\packages\\jk.mexc.net\\3.9.0\\jk.mexc.net.3.9.0.nupkg.sha512",
     "C:\\Users\\Георгий\\.nuget\\packages\\kucoin.net\\7.8.0\\kucoin.net.7.8.0.nupkg.sha512",
     "C:\\Users\\Георгий\\.nuget\\packages\\libsodium\\1.0.20.1\\libsodium.1.0.20.1.nupkg.sha512",

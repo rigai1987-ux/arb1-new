@@ -36,6 +36,7 @@ public class OrchestrationService
         _webSocketServer.Start();
 
         var exchangeNames = _configuration.GetSection("ExchangeSettings:Exchanges").GetChildren().Select(x => x.Key);
+        var tasks = new List<Task>();
 
         foreach (var exchangeName in exchangeNames)
         {
@@ -46,8 +47,10 @@ public class OrchestrationService
                 continue;
             }
 
-            await ProcessExchange(exchangeClient, exchangeName);
+            tasks.Add(ProcessExchange(exchangeClient, exchangeName));
         }
+
+        await Task.WhenAll(tasks);
     }
 
     private async Task ProcessExchange(IExchangeClient exchangeClient, string exchangeName)

@@ -52,6 +52,7 @@ class Program
                 // Register all exchange clients
                 services.AddSingleton<IExchangeClient, BinanceExchangeClient>();
                 services.AddSingleton<IExchangeClient, MexcExchangeClient>();
+                services.AddSingleton<IExchangeClient, GateIoExchangeClient>();
 
                 services.AddSingleton<OrchestrationService>();
             });

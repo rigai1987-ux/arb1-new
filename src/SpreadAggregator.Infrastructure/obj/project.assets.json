@@ -98,6 +98,22 @@
           "lib/netcoreapp2.0/Fleck.dll": {}
         }
       },
+      "GateIo.Net/2.10.0": {
+        "type": "package",
+        "dependencies": {
+          "CryptoExchange.Net": "9.9.0"
+        },
+        "compile": {
+          "lib/net9.0/GateIo.Net.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/GateIo.Net.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "JK.Mexc.Net/3.9.0": {
         "type": "package",
         "dependencies": {
@@ -685,6 +701,27 @@
         "lib/net45/Fleck.dll",
         "lib/netcoreapp2.0/Fleck.dll",
         "lib/netstandard2.0/Fleck.dll"
+      ]
+    },
+    "GateIo.Net/2.10.0": {
+      "sha512": "3D4LPSzf/ZtcOq0jxZGOwUiFHpkr5WV0Q5FJ60B2j10NiUUeomqUnZG7fPtzHccm5qUzTlly6H9pq1bkWFDOFQ==",
+      "type": "package",
+      "path": "gateio.net/2.10.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "gateio.net.2.10.0.nupkg.sha512",
+        "gateio.net.nuspec",
+        "icon.png",
+        "lib/net8.0/GateIo.Net.dll",
+        "lib/net8.0/GateIo.Net.xml",
+        "lib/net9.0/GateIo.Net.dll",
+        "lib/net9.0/GateIo.Net.xml",
+        "lib/netstandard2.0/GateIo.Net.dll",
+        "lib/netstandard2.0/GateIo.Net.xml",
+        "lib/netstandard2.1/GateIo.Net.dll",
+        "lib/netstandard2.1/GateIo.Net.xml"
       ]
     },
     "JK.Mexc.Net/3.9.0": {
@@ -1394,6 +1431,7 @@
       "Bybit.Net >= 5.9.0",
       "CryptoExchange.Net >= 9.9.0",
       "Fleck >= 1.2.0",
+      "GateIo.Net >= 2.10.0",
       "JK.Mexc.Net >= 3.9.0",
       "Kucoin.Net >= 7.8.0",
       "OKX.Api >= 5.5.1013",
@@ -1462,6 +1500,10 @@
           "Fleck": {
             "target": "Package",
             "version": "[1.2.0, )"
+          },
+          "GateIo.Net": {
+            "target": "Package",
+            "version": "[2.10.0, )"
           },
           "JK.Mexc.Net": {
             "target": "Package",
