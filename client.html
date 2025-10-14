@@ -53,7 +53,10 @@
             const tableWrapper = document.createElement('div');
             tableWrapper.className = 'table-wrapper';
             tableWrapper.innerHTML = `
-                <h2 style="text-align: center; color: #e0e0e0;">${exchangeName}</h2>
+                <h2 style="text-align: center; color: #e0e0e0;">
+                    ${exchangeName}
+                    <span style="font-size: 0.6em; color: #888;" id="volume-range-${exchangeName}"></span>
+                </h2>
                 <table>
                     <thead>
                         <tr>
@@ -70,10 +73,16 @@
 
         function renderTable(exchangeName) {
             const tableBody = document.getElementById(`data-table-${exchangeName}`);
+            const volumeRangeSpan = document.getElementById(`volume-range-${exchangeName}`);
             const exchangeData = exchanges.get(exchangeName);
             const sortedSpreads = Array.from(exchangeData.values()).sort((a, b) => b.SpreadPercentage - a.SpreadPercentage);
 
             tableBody.innerHTML = '';
+
+            if (sortedSpreads.length > 0) {
+                const first = sortedSpreads[0];
+                volumeRangeSpan.textContent = `($${formatVolume(first.MinVolume)} - $${formatVolume(first.MaxVolume)})`;
+            }
 
             for (const spread of sortedSpreads) {
                 const row = document.createElement('tr');
@@ -83,6 +92,19 @@
                 `;
                 tableBody.appendChild(row);
             }
+        }
+
+        function formatVolume(num) {
+            if (num >= 1000000000) {
+                return (num / 1000000000).toFixed(1).replace(/\.0$/, '') + 'B';
+            }
+            if (num >= 1000000) {
+                return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+            }
+            if (num >= 1000) {
+                return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+            }
+            return num;
         }
 
         socket.onclose = () => {

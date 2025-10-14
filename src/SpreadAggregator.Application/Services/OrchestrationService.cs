@@ -78,6 +78,8 @@ public class OrchestrationService
             if (spreadData.BestAsk == 0) return;
 
             spreadData.SpreadPercentage = _spreadCalculator.Calculate(spreadData.BestBid, spreadData.BestAsk);
+            spreadData.MinVolume = minVolume;
+            spreadData.MaxVolume = maxVolume;
 
             var message = JsonSerializer.Serialize(spreadData);
             await _webSocketServer.BroadcastAsync(message);

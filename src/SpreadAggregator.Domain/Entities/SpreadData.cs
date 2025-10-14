@@ -29,4 +29,6 @@ public class SpreadData
     /// The calculated bid-ask spread in percentage.
     /// </summary>
     public decimal SpreadPercentage { get; set; }
+    public decimal MinVolume { get; set; }
+    public decimal MaxVolume { get; set; }
 }
