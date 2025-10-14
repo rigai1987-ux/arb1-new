@@ -1,12 +1,19 @@
 # Backlog - Агрегатор биржевых спредов
 
-## Рефакторинг 1.1: Упрощение и исправление архитектуры
-- [x] Провести аудит кода и выявить проблемы.
-- [ ] **Упростить DI:** Заменить `AggregatedExchangeClient` на `BinanceExchangeClient`.
-- [ ] **Исправить DI:** Внедрить `VolumeFilter` через конструктор в `OrchestrationService`.
-- [ ] **Удалить лишний код:** Убрать `SimpleHttpServer` из `Program.cs`.
-- [ ] **Удалить лишние файлы:** Удалить `AggregatedExchangeClient`, `ExchangeFactory`, `SimpleHttpServer`.
-- [x] **Обновить `backlog.md`:** Актуализировать задачи.
+## Спринт 2: Интеграция MEXC и рефакторинг
+- [x] **Рефакторинг DI и OrchestrationService:**
+    - [x] Упрощен `IExchangeClient` (удален метод `GetClient`).
+    - [x] Удален неиспользуемый `ExchangeFactory`.
+    - [x] `OrchestrationService` переработан для работы с `IEnumerable<IExchangeClient>`.
+    - [x] Логика запуска обработки бирж вынесена в `OrchestrationService` и основывается на конфигурации.
+- [x] **Интеграция с MEXC:**
+    - [x] Добавлен пакет `JK.Mexc.Net`.
+    - [x] Создан `MexcExchangeClient`.
+    - [x] `MexcExchangeClient` зарегистрирован в DI.
+    - [x] `appsettings.json` обновлен для поддержки MEXC.
+- [x] **Тестирование и отладка:**
+    - [x] Исправлена ошибка с размером пакета подписки для MEXC.
+    - [x] Скорректированы параметры фильтрации для MEXC.
 
 ## MVP 1.0: Основной функционал (Завершено)
 
@@ -26,7 +33,7 @@
 - [ ] Написать Unit-тест для `VolumeFilter`.
 
 ### Слой инфраструктуры (Infrastructure)
-- [x] Установить `Binance.Net` (вместо `JKorf.Exchange.Net`).
+- [x] Установить `Binance.Net`.
 - [x] Реализовать `BinanceExchangeClient` для получения данных с биржи.
 - [x] Реализовать `FleckWebSocketServer` для трансляции данных.
 

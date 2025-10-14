@@ -47,8 +47,12 @@ class Program
                 });
 
                 services.AddSingleton<SpreadCalculator>();
-                services.AddSingleton<IExchangeClient, BinanceExchangeClient>();
-                services.AddSingleton<OrchestrationService>();
                 services.AddSingleton<VolumeFilter>();
+
+                // Register all exchange clients
+                services.AddSingleton<IExchangeClient, BinanceExchangeClient>();
+                services.AddSingleton<IExchangeClient, MexcExchangeClient>();
+
+                services.AddSingleton<OrchestrationService>();
             });
 }

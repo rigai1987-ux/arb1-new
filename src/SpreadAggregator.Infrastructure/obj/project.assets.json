@@ -72,6 +72,23 @@
           }
         }
       },
+      "CryptoExchange.Net.Protobuf/9.8.0": {
+        "type": "package",
+        "dependencies": {
+          "CryptoExchange.Net": "9.8.0",
+          "protobuf-net": "3.2.56"
+        },
+        "compile": {
+          "lib/net9.0/CryptoExchange.Net.Protobuf.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/CryptoExchange.Net.Protobuf.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Fleck/1.2.0": {
         "type": "package",
         "compile": {
@@ -79,6 +96,22 @@
         },
         "runtime": {
           "lib/netcoreapp2.0/Fleck.dll": {}
+        }
+      },
+      "JK.Mexc.Net/3.9.0": {
+        "type": "package",
+        "dependencies": {
+          "CryptoExchange.Net.Protobuf": "9.8.0"
+        },
+        "compile": {
+          "lib/net9.0/Mexc.Net.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/Mexc.Net.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Kucoin.Net/7.8.0": {
@@ -460,6 +493,35 @@
           }
         }
       },
+      "protobuf-net/3.2.56": {
+        "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.56"
+        },
+        "compile": {
+          "lib/net8.0/protobuf-net.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/protobuf-net.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "protobuf-net.Core/3.2.56": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Text.Json/9.0.6": {
         "type": "package",
         "compile": {
@@ -589,6 +651,27 @@
         "lib/netstandard2.1/CryptoExchange.Net.xml"
       ]
     },
+    "CryptoExchange.Net.Protobuf/9.8.0": {
+      "sha512": "AmA66o24/8VMClF1Ivd40JoCdGU1hbQXJ7h6P/KgrpWhTxqCcESLQ4zisHRzB1GExKMQ5+J224vOSGiGuDhJ9Q==",
+      "type": "package",
+      "path": "cryptoexchange.net.protobuf/9.8.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "cryptoexchange.net.protobuf.9.8.0.nupkg.sha512",
+        "cryptoexchange.net.protobuf.nuspec",
+        "icon.png",
+        "lib/net8.0/CryptoExchange.Net.Protobuf.dll",
+        "lib/net8.0/CryptoExchange.Net.Protobuf.xml",
+        "lib/net9.0/CryptoExchange.Net.Protobuf.dll",
+        "lib/net9.0/CryptoExchange.Net.Protobuf.xml",
+        "lib/netstandard2.0/CryptoExchange.Net.Protobuf.dll",
+        "lib/netstandard2.0/CryptoExchange.Net.Protobuf.xml",
+        "lib/netstandard2.1/CryptoExchange.Net.Protobuf.dll",
+        "lib/netstandard2.1/CryptoExchange.Net.Protobuf.xml"
+      ]
+    },
     "Fleck/1.2.0": {
       "sha512": "bPLXn6QbLAFoviur6XbrKB0Zn6x04E8VibHXyHZeJsoC7bkUl5DVtzM5cZgDuqHkIrBqAXJyTNJwSNIc6wBJ2Q==",
       "type": "package",
@@ -602,6 +685,27 @@
         "lib/net45/Fleck.dll",
         "lib/netcoreapp2.0/Fleck.dll",
         "lib/netstandard2.0/Fleck.dll"
+      ]
+    },
+    "JK.Mexc.Net/3.9.0": {
+      "sha512": "VNwR0foNFgaZ/fNe8Y4K4JbecDJpEKfi8J6oO8IgM9XjUFjDzUy9Yx0HwwJTYWQ+j7JkAvZ6+frtbOv+rwfrFA==",
+      "type": "package",
+      "path": "jk.mexc.net/3.9.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "jk.mexc.net.3.9.0.nupkg.sha512",
+        "jk.mexc.net.nuspec",
+        "lib/net8.0/Mexc.Net.dll",
+        "lib/net8.0/Mexc.Net.xml",
+        "lib/net9.0/Mexc.Net.dll",
+        "lib/net9.0/Mexc.Net.xml",
+        "lib/netstandard2.0/Mexc.Net.dll",
+        "lib/netstandard2.0/Mexc.Net.xml",
+        "lib/netstandard2.1/Mexc.Net.dll",
+        "lib/netstandard2.1/Mexc.Net.xml"
       ]
     },
     "Kucoin.Net/7.8.0": {
@@ -1160,6 +1264,48 @@
         "okx.api.nuspec"
       ]
     },
+    "protobuf-net/3.2.56": {
+      "sha512": "4IPJeTYAMNewlN8MDaFkcmR/9hLhJeo9eARnTh104zh7mf+vXT2gu5MUfUnkSQU+CH578Q6vcdU7LQDQPG6eaw==",
+      "type": "package",
+      "path": "protobuf-net/3.2.56",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/protobuf-net.dll",
+        "lib/net462/protobuf-net.xml",
+        "lib/net8.0/protobuf-net.dll",
+        "lib/net8.0/protobuf-net.xml",
+        "lib/netstandard2.0/protobuf-net.dll",
+        "lib/netstandard2.0/protobuf-net.xml",
+        "lib/netstandard2.1/protobuf-net.dll",
+        "lib/netstandard2.1/protobuf-net.xml",
+        "protobuf-net.3.2.56.nupkg.sha512",
+        "protobuf-net.nuspec",
+        "protobuf-net.png",
+        "readme.md"
+      ]
+    },
+    "protobuf-net.Core/3.2.56": {
+      "sha512": "d6QOukTpDzs7zZv9tPnBZMtvHDNeHJQXUhMx54g4urUQsXK3oo9U70H9HvklYq7hlQ4A7AHJl7EVEqyCXXIl8Q==",
+      "type": "package",
+      "path": "protobuf-net.core/3.2.56",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/protobuf-net.Core.dll",
+        "lib/net462/protobuf-net.Core.xml",
+        "lib/net8.0/protobuf-net.Core.dll",
+        "lib/net8.0/protobuf-net.Core.xml",
+        "lib/netstandard2.0/protobuf-net.Core.dll",
+        "lib/netstandard2.0/protobuf-net.Core.xml",
+        "lib/netstandard2.1/protobuf-net.Core.dll",
+        "lib/netstandard2.1/protobuf-net.Core.xml",
+        "protobuf-net.core.3.2.56.nupkg.sha512",
+        "protobuf-net.core.nuspec",
+        "protobuf-net.png",
+        "readme.md"
+      ]
+    },
     "System.Text.Json/9.0.6": {
       "sha512": "h+ZtYTyTnTh5Ju6mHCKb3FPGx4ylJZgm9W7Y2psUnkhQRPMOIxX+TCN0ZgaR/+Yea+93XHWAaMzYTar1/EHIPg==",
       "type": "package",
@@ -1248,6 +1394,7 @@
       "Bybit.Net >= 5.9.0",
       "CryptoExchange.Net >= 9.9.0",
       "Fleck >= 1.2.0",
+      "JK.Mexc.Net >= 3.9.0",
       "Kucoin.Net >= 7.8.0",
       "OKX.Api >= 5.5.1013",
       "SpreadAggregator.Application >= 1.0.0"
@@ -1315,6 +1462,10 @@
           "Fleck": {
             "target": "Package",
             "version": "[1.2.0, )"
+          },
+          "JK.Mexc.Net": {
+            "target": "Package",
+            "version": "[3.9.0, )"
           },
           "Kucoin.Net": {
             "target": "Package",

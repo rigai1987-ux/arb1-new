@@ -70,8 +70,4 @@ public class BinanceExchangeClient : IExchangeClient
         }
     }
 
-    public IExchangeClient? GetClient(string name)
-    {
-        return string.Equals(name, ExchangeName, StringComparison.OrdinalIgnoreCase) ? this : null;
-    }
 }

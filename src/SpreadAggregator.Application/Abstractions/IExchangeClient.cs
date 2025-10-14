@@ -16,13 +16,6 @@ public interface IExchangeClient
     string ExchangeName { get; }
 
     /// <summary>
-    /// Gets a specific exchange client by name.
-    /// </summary>
-    /// <param name="name">The name of the exchange.</param>
-    /// <returns>An instance of IExchangeClient or null if not found.</returns>
-    IExchangeClient? GetClient(string name);
-
-    /// <summary>
     /// Gets all symbols from the exchange.
     /// </summary>
     /// <returns>A list of symbols.</returns>

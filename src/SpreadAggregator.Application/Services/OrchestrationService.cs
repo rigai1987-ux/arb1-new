@@ -2,6 +2,7 @@ using Microsoft.Extensions.Configuration;
 using SpreadAggregator.Application.Abstractions;
 using SpreadAggregator.Domain.Services;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -14,31 +15,47 @@ public class OrchestrationService
     private readonly SpreadCalculator _spreadCalculator;
     private readonly VolumeFilter _volumeFilter;
     private readonly IConfiguration _configuration;
-    private readonly IExchangeClient _exchangeClient;
+    private readonly IEnumerable<IExchangeClient> _exchangeClients;
 
     public OrchestrationService(
         IWebSocketServer webSocketServer,
         SpreadCalculator spreadCalculator,
         IConfiguration configuration,
         VolumeFilter volumeFilter,
-        IExchangeClient exchangeClient)
+        IEnumerable<IExchangeClient> exchangeClients)
     {
         _webSocketServer = webSocketServer;
         _spreadCalculator = spreadCalculator;
         _configuration = configuration;
         _volumeFilter = volumeFilter;
-        _exchangeClient = exchangeClient;
+        _exchangeClients = exchangeClients;
     }
 
     public async Task StartAsync()
     {
         _webSocketServer.Start();
 
-        var exchangeName = "Binance"; // Hardcoded for now
+        var exchangeNames = _configuration.GetSection("ExchangeSettings:Exchanges").GetChildren().Select(x => x.Key);
+
+        foreach (var exchangeName in exchangeNames)
+        {
+            var exchangeClient = _exchangeClients.FirstOrDefault(c => c.ExchangeName.Equals(exchangeName, StringComparison.OrdinalIgnoreCase));
+            if (exchangeClient == null)
+            {
+                Console.WriteLine($"[ERROR] No client found for exchange: {exchangeName}");
+                continue;
+            }
+
+            await ProcessExchange(exchangeClient, exchangeName);
+        }
+    }
+
+    private async Task ProcessExchange(IExchangeClient exchangeClient, string exchangeName)
+    {
         var minVolume = _configuration.GetValue<decimal>($"ExchangeSettings:Exchanges:{exchangeName}:VolumeFilter:MinUsdVolume");
         var maxVolume = _configuration.GetValue<decimal>($"ExchangeSettings:Exchanges:{exchangeName}:VolumeFilter:MaxUsdVolume");
 
-        var tickers = (await _exchangeClient.GetTickersAsync()).ToList();
+        var tickers = (await exchangeClient.GetTickersAsync()).ToList();
         Console.WriteLine($"[{exchangeName}] Received {tickers.Count} tickers.");
 
         var filteredSymbols = tickers
@@ -53,7 +70,7 @@ public class OrchestrationService
             return;
         }
 
-        await _exchangeClient.SubscribeToTickersAsync(filteredSymbols, async spreadData =>
+        await exchangeClient.SubscribeToTickersAsync(filteredSymbols, async spreadData =>
         {
             if (spreadData.BestAsk == 0) return;
 

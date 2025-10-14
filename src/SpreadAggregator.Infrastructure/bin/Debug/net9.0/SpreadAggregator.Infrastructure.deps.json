@@ -12,6 +12,7 @@
           "Bybit.Net": "5.9.0",
           "CryptoExchange.Net": "9.9.0",
           "Fleck": "1.2.0",
+          "JK.Mexc.Net": "3.9.0",
           "Kucoin.Net": "7.8.0",
           "OKX.Api": "5.5.1013",
           "SpreadAggregator.Application": "1.0.0"
@@ -70,11 +71,34 @@
           }
         }
       },
+      "CryptoExchange.Net.Protobuf/9.8.0": {
+        "dependencies": {
+          "CryptoExchange.Net": "9.9.0",
+          "protobuf-net": "3.2.56"
+        },
+        "runtime": {
+          "lib/net9.0/CryptoExchange.Net.Protobuf.dll": {
+            "assemblyVersion": "9.8.0.0",
+            "fileVersion": "9.8.0.0"
+          }
+        }
+      },
       "Fleck/1.2.0": {
         "runtime": {
           "lib/netcoreapp2.0/Fleck.dll": {
             "assemblyVersion": "1.2.0.0",
             "fileVersion": "1.2.0.0"
+          }
+        }
+      },
+      "JK.Mexc.Net/3.9.0": {
+        "dependencies": {
+          "CryptoExchange.Net.Protobuf": "9.8.0"
+        },
+        "runtime": {
+          "lib/net9.0/Mexc.Net.dll": {
+            "assemblyVersion": "3.9.0.0",
+            "fileVersion": "3.9.0.0"
           }
         }
       },
@@ -351,6 +375,25 @@
           }
         }
       },
+      "protobuf-net/3.2.56": {
+        "dependencies": {
+          "protobuf-net.Core": "3.2.56"
+        },
+        "runtime": {
+          "lib/net8.0/protobuf-net.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.2.56.57311"
+          }
+        }
+      },
+      "protobuf-net.Core/3.2.56": {
+        "runtime": {
+          "lib/net8.0/protobuf-net.Core.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.2.56.57311"
+          }
+        }
+      },
       "System.Text.Json/9.0.6": {},
       "SpreadAggregator.Application/1.0.0": {
         "dependencies": {
@@ -409,12 +452,26 @@
       "path": "cryptoexchange.net/9.9.0",
       "hashPath": "cryptoexchange.net.9.9.0.nupkg.sha512"
     },
+    "CryptoExchange.Net.Protobuf/9.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AmA66o24/8VMClF1Ivd40JoCdGU1hbQXJ7h6P/KgrpWhTxqCcESLQ4zisHRzB1GExKMQ5+J224vOSGiGuDhJ9Q==",
+      "path": "cryptoexchange.net.protobuf/9.8.0",
+      "hashPath": "cryptoexchange.net.protobuf.9.8.0.nupkg.sha512"
+    },
     "Fleck/1.2.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-bPLXn6QbLAFoviur6XbrKB0Zn6x04E8VibHXyHZeJsoC7bkUl5DVtzM5cZgDuqHkIrBqAXJyTNJwSNIc6wBJ2Q==",
       "path": "fleck/1.2.0",
       "hashPath": "fleck.1.2.0.nupkg.sha512"
+    },
+    "JK.Mexc.Net/3.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VNwR0foNFgaZ/fNe8Y4K4JbecDJpEKfi8J6oO8IgM9XjUFjDzUy9Yx0HwwJTYWQ+j7JkAvZ6+frtbOv+rwfrFA==",
+      "path": "jk.mexc.net/3.9.0",
+      "hashPath": "jk.mexc.net.3.9.0.nupkg.sha512"
     },
     "Kucoin.Net/7.8.0": {
       "type": "package",
@@ -541,6 +598,20 @@
       "sha512": "sha512-2BX5YOMDs9EceNk8yiiO2Wdha8s5Ewt/eZWYYOD49OO/oZDv0Jk/R9OTq7LoEOJJk+9tqEakog9iL6+7Kc40aQ==",
       "path": "okx.api/5.5.1013",
       "hashPath": "okx.api.5.5.1013.nupkg.sha512"
+    },
+    "protobuf-net/3.2.56": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4IPJeTYAMNewlN8MDaFkcmR/9hLhJeo9eARnTh104zh7mf+vXT2gu5MUfUnkSQU+CH578Q6vcdU7LQDQPG6eaw==",
+      "path": "protobuf-net/3.2.56",
+      "hashPath": "protobuf-net.3.2.56.nupkg.sha512"
+    },
+    "protobuf-net.Core/3.2.56": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-d6QOukTpDzs7zZv9tPnBZMtvHDNeHJQXUhMx54g4urUQsXK3oo9U70H9HvklYq7hlQ4A7AHJl7EVEqyCXXIl8Q==",
+      "path": "protobuf-net.core/3.2.56",
+      "hashPath": "protobuf-net.core.3.2.56.nupkg.sha512"
     },
     "System.Text.Json/9.0.6": {
       "type": "package",
