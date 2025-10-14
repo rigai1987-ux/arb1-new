@@ -105,3 +105,4 @@ c:\visual projects\arb1\tests\SpreadAggregator.Tests\obj\Debug\net9.0\ref\Spread
 C:\visual projects\arb1\tests\SpreadAggregator.Tests\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\visual projects\arb1\tests\SpreadAggregator.Tests\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Binder.dll
 C:\visual projects\arb1\tests\SpreadAggregator.Tests\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+C:\visual projects\arb1\tests\SpreadAggregator.Tests\obj\Debug\net9.0\SpreadAggregator.Tests.sourcelink.json

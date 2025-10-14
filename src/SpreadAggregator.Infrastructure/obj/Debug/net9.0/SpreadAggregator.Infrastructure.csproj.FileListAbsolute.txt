@@ -15,3 +15,4 @@ c:\visual projects\arb1\src\SpreadAggregator.Infrastructure\obj\Debug\net9.0\Spr
 c:\visual projects\arb1\src\SpreadAggregator.Infrastructure\obj\Debug\net9.0\refint\SpreadAggregator.Infrastructure.dll
 c:\visual projects\arb1\src\SpreadAggregator.Infrastructure\obj\Debug\net9.0\SpreadAggregator.Infrastructure.pdb
 c:\visual projects\arb1\src\SpreadAggregator.Infrastructure\obj\Debug\net9.0\ref\SpreadAggregator.Infrastructure.dll
+C:\visual projects\arb1\src\SpreadAggregator.Infrastructure\obj\Debug\net9.0\SpreadAggregator.Infrastructure.sourcelink.json

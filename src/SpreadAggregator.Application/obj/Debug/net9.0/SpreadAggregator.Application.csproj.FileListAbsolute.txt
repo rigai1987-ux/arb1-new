@@ -13,3 +13,4 @@ c:\visual projects\arb1\src\SpreadAggregator.Application\obj\Debug\net9.0\Spread
 c:\visual projects\arb1\src\SpreadAggregator.Application\obj\Debug\net9.0\refint\SpreadAggregator.Application.dll
 c:\visual projects\arb1\src\SpreadAggregator.Application\obj\Debug\net9.0\SpreadAggregator.Application.pdb
 c:\visual projects\arb1\src\SpreadAggregator.Application\obj\Debug\net9.0\ref\SpreadAggregator.Application.dll
+C:\visual projects\arb1\src\SpreadAggregator.Application\obj\Debug\net9.0\SpreadAggregator.Application.sourcelink.json

@@ -29,7 +29,7 @@ public class FleckWebSocketServer : Application.Abstractions.IWebSocketServer, I
 
     public Task BroadcastAsync(string message)
     {
-        var tasks = _sockets.ToList().Select(s => s.Send(message));
+        var tasks = _sockets.Where(s => s.IsAvailable).Select(s => s.Send(message));
         return Task.WhenAll(tasks);
     }
 

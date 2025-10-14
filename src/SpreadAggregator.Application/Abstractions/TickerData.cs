@@ -7,4 +7,6 @@ public class TickerData
 {
     public required string Symbol { get; init; }
     public decimal QuoteVolume { get; init; }
+    public decimal BestBid { get; init; }
+    public decimal BestAsk { get; init; }
 }

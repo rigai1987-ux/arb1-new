@@ -9,3 +9,4 @@ c:\visual projects\arb1\src\SpreadAggregator.Domain\obj\Debug\net9.0\SpreadAggre
 c:\visual projects\arb1\src\SpreadAggregator.Domain\obj\Debug\net9.0\refint\SpreadAggregator.Domain.dll
 c:\visual projects\arb1\src\SpreadAggregator.Domain\obj\Debug\net9.0\SpreadAggregator.Domain.pdb
 c:\visual projects\arb1\src\SpreadAggregator.Domain\obj\Debug\net9.0\ref\SpreadAggregator.Domain.dll
+C:\visual projects\arb1\src\SpreadAggregator.Domain\obj\Debug\net9.0\SpreadAggregator.Domain.sourcelink.json

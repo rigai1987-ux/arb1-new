@@ -11,6 +11,18 @@ namespace SpreadAggregator.Application.Abstractions;
 public interface IExchangeClient
 {
     /// <summary>
+    /// Gets the name of the exchange.
+    /// </summary>
+    string ExchangeName { get; }
+
+    /// <summary>
+    /// Gets a specific exchange client by name.
+    /// </summary>
+    /// <param name="name">The name of the exchange.</param>
+    /// <returns>An instance of IExchangeClient or null if not found.</returns>
+    IExchangeClient? GetClient(string name);
+
+    /// <summary>
     /// Gets all symbols from the exchange.
     /// </summary>
     /// <returns>A list of symbols.</returns>

@@ -6,6 +6,8 @@
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #121212; color: #e0e0e0; margin: 0; padding: 20px; }
         h1 { text-align: center; color: #bb86fc; }
+        .tables-container { display: flex; justify-content: space-around; }
+        .table-wrapper { width: 48%; }
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
         th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #333; }
         th { background-color: #1f1f1f; color: #bb86fc; }
@@ -14,29 +16,19 @@
         .status { position: fixed; top: 10px; right: 10px; padding: 5px 10px; border-radius: 5px; font-weight: bold; }
         .connected { background-color: #03dac6; color: #121212; }
         .disconnected { background-color: #cf6679; color: #121212; }
-        .highlight { background-color: #3700b3; transition: background-color 0.5s ease; }
     </style>
 </head>
 <body>
     <div id="status" class="status disconnected">Disconnected</div>
     <h1>Агрегатор Биржевых Спредов</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Биржа</th>
-                <th>Символ</th>
-                <th>Спред (%)</th>
-            </tr>
-        </thead>
-        <tbody id="data-table"></tbody>
-    </table>
+    <div id="tables-container" class="tables-container"></div>
 
     <script>
-        const tableBody = document.getElementById('data-table');
+        const tablesContainer = document.getElementById('tables-container');
         const statusDiv = document.getElementById('status');
         const socket = new WebSocket('ws://127.0.0.1:8181');
 
-        const spreads = new Map();
+        const exchanges = new Map();
 
         socket.onopen = () => {
             statusDiv.textContent = 'Connected';
@@ -45,20 +37,47 @@
 
         socket.onmessage = (event) => {
             const data = JSON.parse(event.data);
-            const key = `${data.Exchange}-${data.Symbol}`;
-            spreads.set(key, data);
-            renderTable();
+            
+            if (!exchanges.has(data.Exchange)) {
+                createTableForExchange(data.Exchange);
+            }
+
+            const exchangeData = exchanges.get(data.Exchange);
+            const key = data.Symbol;
+            exchangeData.set(key, data);
+
+            renderTable(data.Exchange);
         };
 
-        function renderTable() {
-            const sortedSpreads = Array.from(spreads.values()).sort((a, b) => b.SpreadPercentage - a.SpreadPercentage);
+        function createTableForExchange(exchangeName) {
+            const tableWrapper = document.createElement('div');
+            tableWrapper.className = 'table-wrapper';
+            tableWrapper.innerHTML = `
+                <h2 style="text-align: center; color: #e0e0e0;">${exchangeName}</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Символ</th>
+                            <th>Спред (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data-table-${exchangeName}"></tbody>
+                </table>
+            `;
+            tablesContainer.appendChild(tableWrapper);
+            exchanges.set(exchangeName, new Map());
+        }
+
+        function renderTable(exchangeName) {
+            const tableBody = document.getElementById(`data-table-${exchangeName}`);
+            const exchangeData = exchanges.get(exchangeName);
+            const sortedSpreads = Array.from(exchangeData.values()).sort((a, b) => b.SpreadPercentage - a.SpreadPercentage);
 
             tableBody.innerHTML = '';
 
             for (const spread of sortedSpreads) {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                    <td>${spread.Exchange}</td>
                     <td>${spread.Symbol}</td>
                     <td>${spread.SpreadPercentage.toFixed(6)}</td>
                 `;

@@ -49,12 +49,6 @@ class Program
                 services.AddSingleton<SpreadCalculator>();
                 services.AddSingleton<IExchangeClient, BinanceExchangeClient>();
                 services.AddSingleton<OrchestrationService>();
-                services.AddSingleton(sp =>
-                {
-                    var config = sp.GetRequiredService<IConfiguration>();
-                    var minVolume = config.GetValue<decimal>("ExchangeSettings:VolumeFilter:MinUsdVolume");
-                    var maxVolume = config.GetValue<decimal>("ExchangeSettings:VolumeFilter:MaxUsdVolume");
-                    return new VolumeFilter(minVolume, maxVolume);
-                });
+                services.AddSingleton<VolumeFilter>();
             });
 }

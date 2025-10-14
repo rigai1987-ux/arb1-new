@@ -5,38 +5,20 @@ namespace SpreadAggregator.Tests.Domain.Services;
 
 public class VolumeFilterTests
 {
-    private readonly VolumeFilter _volumeFilter;
-    private const decimal MinVolume = 10_000_000;
-    private const decimal MaxVolume = 100_000_000;
-
-    public VolumeFilterTests()
-    {
-        _volumeFilter = new VolumeFilter(MinVolume, MaxVolume);
-    }
+    private readonly VolumeFilter _filter = new();
 
     [Theory]
-    [InlineData(15_000_000)]      // Inside the range
-    [InlineData(10_000_000)]      // Exactly at the lower bound
-    [InlineData(100_000_000)]     // Exactly at the upper bound
-    public void IsVolumeSufficient_WhenVolumeIsInRange_ShouldReturnTrue(decimal volume)
+    [InlineData(500, 100, 1000, true)]  // Volume within range
+    [InlineData(100, 100, 1000, true)]  // Volume at min edge
+    [InlineData(1000, 100, 1000, true)] // Volume at max edge
+    [InlineData(50, 100, 1000, false)]   // Volume below range
+    [InlineData(1500, 100, 1000, false)] // Volume above range
+    public void IsVolumeSufficient_ShouldReturnExpectedResult(decimal volume, decimal min, decimal max, bool expected)
     {
         // Act
-        var result = _volumeFilter.IsVolumeSufficient(volume);
+        var result = _filter.IsVolumeSufficient(volume, min, max);
 
         // Assert
-        Assert.True(result);
-    }
-
-    [Theory]
-    [InlineData(9_999_999.99)] // Just below the range
-    [InlineData(100_000_000.01)] // Just above the range
-    [InlineData(0)]              // Zero volume
-    public void IsVolumeSufficient_WhenVolumeIsOutOfRange_ShouldReturnFalse(decimal volume)
-    {
-        // Act
-        var result = _volumeFilter.IsVolumeSufficient(volume);
-
-        // Assert
-        Assert.False(result);
+        Assert.Equal(expected, result);
     }
 }

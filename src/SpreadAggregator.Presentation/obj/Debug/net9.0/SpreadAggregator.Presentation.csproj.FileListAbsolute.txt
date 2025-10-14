@@ -76,3 +76,4 @@ c:\visual projects\arb1\src\SpreadAggregator.Presentation\obj\Debug\net9.0\Sprea
 C:\visual projects\arb1\src\SpreadAggregator.Presentation\obj\Debug\net9.0\SpreadAggregator.Presentation.genruntimeconfig.cache
 C:\visual projects\arb1\src\SpreadAggregator.Presentation\obj\Debug\net9.0\ref\SpreadAggregator.Presentation.dll
 c:\visual projects\arb1\src\SpreadAggregator.Presentation\bin\Debug\net9.0\appsettings.json
+C:\visual projects\arb1\src\SpreadAggregator.Presentation\obj\Debug\net9.0\SpreadAggregator.Presentation.sourcelink.json

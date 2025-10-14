@@ -10,6 +10,7 @@ namespace SpreadAggregator.Infrastructure.Services.Exchanges;
 
 public class BinanceExchangeClient : IExchangeClient
 {
+    public string ExchangeName => "Binance";
     private readonly BinanceSocketClient _socketClient;
     private readonly BinanceRestClient _restClient;
 
@@ -67,5 +68,10 @@ public class BinanceExchangeClient : IExchangeClient
                 result.Data.ConnectionRestored += (t) => Console.WriteLine($"[BinanceExchangeClient] Connection restored for batch {i / batchSize + 1} after {t}.");
             }
         }
+    }
+
+    public IExchangeClient? GetClient(string name)
+    {
+        return string.Equals(name, ExchangeName, StringComparison.OrdinalIgnoreCase) ? this : null;
     }
 }
