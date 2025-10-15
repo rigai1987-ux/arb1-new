@@ -111,6 +111,22 @@
           }
         }
       },
+      "JK.OKX.Net/3.8.0": {
+        "type": "package",
+        "dependencies": {
+          "CryptoExchange.Net": "9.8.0"
+        },
+        "compile": {
+          "lib/net9.0/OKX.Net.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/OKX.Net.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Kucoin.Net/7.8.0": {
         "type": "package",
         "dependencies": {
@@ -833,6 +849,7 @@
           "Fleck": "1.2.0",
           "GateIo.Net": "2.10.0",
           "JK.Mexc.Net": "3.9.0",
+          "JK.OKX.Net": "3.8.0",
           "Kucoin.Net": "7.8.0",
           "SpreadAggregator.Application": "1.0.0"
         },
@@ -985,6 +1002,27 @@
         "lib/netstandard2.0/Mexc.Net.xml",
         "lib/netstandard2.1/Mexc.Net.dll",
         "lib/netstandard2.1/Mexc.Net.xml"
+      ]
+    },
+    "JK.OKX.Net/3.8.0": {
+      "sha512": "Nsm20w2IYZS7kn6CgNkjV1OvPriVwLPq8luoV8u2CLyarg2nV2Trp4Iyed6OhwWuW5jZJ5RhFxszR4wEXDbFGA==",
+      "type": "package",
+      "path": "jk.okx.net/3.8.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "jk.okx.net.3.8.0.nupkg.sha512",
+        "jk.okx.net.nuspec",
+        "lib/net8.0/OKX.Net.dll",
+        "lib/net8.0/OKX.Net.xml",
+        "lib/net9.0/OKX.Net.dll",
+        "lib/net9.0/OKX.Net.xml",
+        "lib/netstandard2.0/OKX.Net.dll",
+        "lib/netstandard2.0/OKX.Net.xml",
+        "lib/netstandard2.1/OKX.Net.dll",
+        "lib/netstandard2.1/OKX.Net.xml"
       ]
     },
     "Kucoin.Net/7.8.0": {

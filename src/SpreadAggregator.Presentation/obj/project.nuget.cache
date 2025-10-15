@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Hh46vsIsNxY=",
+  "dgSpecHash": "RjdRL89bm80=",
   "success": true,
   "projectFilePath": "C:\\visual projects\\arb1\\src\\SpreadAggregator.Presentation\\SpreadAggregator.Presentation.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\Георгий\\.nuget\\packages\\fleck\\1.2.0\\fleck.1.2.0.nupkg.sha512",
     "C:\\Users\\Георгий\\.nuget\\packages\\gateio.net\\2.10.0\\gateio.net.2.10.0.nupkg.sha512",
     "C:\\Users\\Георгий\\.nuget\\packages\\jk.mexc.net\\3.9.0\\jk.mexc.net.3.9.0.nupkg.sha512",
+    "C:\\Users\\Георгий\\.nuget\\packages\\jk.okx.net\\3.8.0\\jk.okx.net.3.8.0.nupkg.sha512",
     "C:\\Users\\Георгий\\.nuget\\packages\\kucoin.net\\7.8.0\\kucoin.net.7.8.0.nupkg.sha512",
     "C:\\Users\\Георгий\\.nuget\\packages\\microsoft.extensions.configuration\\9.0.9\\microsoft.extensions.configuration.9.0.9.nupkg.sha512",
     "C:\\Users\\Георгий\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\9.0.9\\microsoft.extensions.configuration.abstractions.9.0.9.nupkg.sha512",

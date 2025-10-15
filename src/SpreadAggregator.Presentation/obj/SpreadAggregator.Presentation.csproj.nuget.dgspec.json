@@ -204,6 +204,10 @@
               "target": "Package",
               "version": "[3.9.0, )"
             },
+            "JK.OKX.Net": {
+              "target": "Package",
+              "version": "[3.8.0, )"
+            },
             "Kucoin.Net": {
               "target": "Package",
               "version": "[7.8.0, )"

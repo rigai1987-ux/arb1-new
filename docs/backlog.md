@@ -1,12 +1,18 @@
 # Backlog - Агрегатор биржевых спредов
 
 ## Спринт 4: Интеграция OKX
-- [ ] **Интеграция с OKX:**
-    - [ ] Добавить пакет `JK.OKX.Net`.
-    - [ ] Создать `OkxExchangeClient`.
-    - [ ] Зарегистрировать `OkxExchangeClient` в DI.
-    - [ ] Обновить `appsettings.json` для поддержки OKX.
-    - [ ] Изучить документацию в `C:\visual projects\arb1\docs\jkorf\OKX.Net-main`.
+- [x] **Задача 1: Подготовка и настройка**
+    - [x] Добавить NuGet-пакет `JK.OKX.Net` в проект `SpreadAggregator.Infrastructure`.
+    - [x] Создать файл `OkxExchangeClient.cs` в директории `src/SpreadAggregator.Infrastructure/Services/Exchanges/`.
+    - [x] Зарегистрировать `OkxExchangeClient` в DI-контейнере в `Program.cs`.
+    - [x] Добавить секцию "OKX" в `appsettings.json` с параметрами фильтрации по объему.
+- [x] **Задача 2: Реализация `OkxExchangeClient`**
+    - [x] Реализовать интерфейс `IExchangeClient`.
+    - [x] Реализовать метод `GetTickersAsync` для получения всех тикеров и их 24-часового объема.
+    - [x] Реализовать метод `SubscribeToTickersAsync` для подписки на обновления книги ордеров (book ticker).
+- [ ] **Задача 3: Тестирование и отладка**
+    - [ ] Проверить корректность получения данных по объему и фильтрации символов.
+    - [ ] Убедиться в стабильности WebSocket-подписки и корректности получаемых данных о спреде.
 
 ## Рефакторинг
 - [x] **Удаление OKX:**

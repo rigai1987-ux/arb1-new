@@ -1,0 +1,513 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "SpreadAggregator.Infrastructure/1.0.0": {
+        "dependencies": {
+          "Binance.Net": "11.8.0",
+          "Bybit.Net": "5.9.0",
+          "CryptoExchange.Net": "9.9.0",
+          "Fleck": "1.2.0",
+          "GateIo.Net": "2.10.0",
+          "JK.Mexc.Net": "3.9.0",
+          "JK.OKX.Net": "3.8.0",
+          "Kucoin.Net": "7.8.0",
+          "SpreadAggregator.Application": "1.0.0"
+        },
+        "runtime": {
+          "SpreadAggregator.Infrastructure.dll": {}
+        }
+      },
+      "Binance.Net/11.8.0": {
+        "dependencies": {
+          "CryptoExchange.Net": "9.9.0"
+        },
+        "runtime": {
+          "lib/net9.0/Binance.Net.dll": {
+            "assemblyVersion": "11.8.0.0",
+            "fileVersion": "11.8.0.0"
+          }
+        }
+      },
+      "Bybit.Net/5.9.0": {
+        "dependencies": {
+          "CryptoExchange.Net": "9.9.0"
+        },
+        "runtime": {
+          "lib/net9.0/Bybit.Net.dll": {
+            "assemblyVersion": "5.9.0.0",
+            "fileVersion": "5.9.0.0"
+          }
+        }
+      },
+      "CryptoExchange.Net/9.9.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Binder": "9.0.9",
+          "Microsoft.Extensions.Http": "9.0.6",
+          "Microsoft.Extensions.Logging": "9.0.6",
+          "System.Text.Json": "9.0.6"
+        },
+        "runtime": {
+          "lib/net9.0/CryptoExchange.Net.dll": {
+            "assemblyVersion": "9.9.0.0",
+            "fileVersion": "9.9.0.0"
+          }
+        }
+      },
+      "CryptoExchange.Net.Protobuf/9.8.0": {
+        "dependencies": {
+          "CryptoExchange.Net": "9.9.0",
+          "protobuf-net": "3.2.56"
+        },
+        "runtime": {
+          "lib/net9.0/CryptoExchange.Net.Protobuf.dll": {
+            "assemblyVersion": "9.8.0.0",
+            "fileVersion": "9.8.0.0"
+          }
+        }
+      },
+      "Fleck/1.2.0": {
+        "runtime": {
+          "lib/netcoreapp2.0/Fleck.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        }
+      },
+      "GateIo.Net/2.10.0": {
+        "dependencies": {
+          "CryptoExchange.Net": "9.9.0"
+        },
+        "runtime": {
+          "lib/net9.0/GateIo.Net.dll": {
+            "assemblyVersion": "2.10.0.0",
+            "fileVersion": "2.10.0.0"
+          }
+        }
+      },
+      "JK.Mexc.Net/3.9.0": {
+        "dependencies": {
+          "CryptoExchange.Net.Protobuf": "9.8.0"
+        },
+        "runtime": {
+          "lib/net9.0/Mexc.Net.dll": {
+            "assemblyVersion": "3.9.0.0",
+            "fileVersion": "3.9.0.0"
+          }
+        }
+      },
+      "JK.OKX.Net/3.8.0": {
+        "dependencies": {
+          "CryptoExchange.Net": "9.9.0"
+        },
+        "runtime": {
+          "lib/net9.0/OKX.Net.dll": {
+            "assemblyVersion": "3.8.0.0",
+            "fileVersion": "3.8.0.0"
+          }
+        }
+      },
+      "Kucoin.Net/7.8.0": {
+        "dependencies": {
+          "CryptoExchange.Net": "9.9.0"
+        },
+        "runtime": {
+          "lib/net9.0/Kucoin.Net.dll": {
+            "assemblyVersion": "7.8.0.0",
+            "fileVersion": "7.8.0.0"
+          }
+        }
+      },
+      "Microsoft.Extensions.Configuration/9.0.6": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.9",
+          "Microsoft.Extensions.Primitives": "9.0.9"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.Extensions.Configuration.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "Microsoft.Extensions.Configuration.Abstractions/9.0.9": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "9.0.9"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.925.41916"
+          }
+        }
+      },
+      "Microsoft.Extensions.Configuration.Binder/9.0.9": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.9"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.Extensions.Configuration.Binder.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.925.41916"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection/9.0.6": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.6": {
+        "runtime": {
+          "lib/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "Microsoft.Extensions.Diagnostics/9.0.6": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "9.0.6",
+          "Microsoft.Extensions.Diagnostics.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "9.0.6"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.Extensions.Diagnostics.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "Microsoft.Extensions.Diagnostics.Abstractions/9.0.6": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Options": "9.0.6"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.Extensions.Diagnostics.Abstractions.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "Microsoft.Extensions.Http/9.0.6": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.9",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Diagnostics": "9.0.6",
+          "Microsoft.Extensions.Logging": "9.0.6",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Options": "9.0.6"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.Extensions.Http.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "Microsoft.Extensions.Logging/9.0.6": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "9.0.6",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Options": "9.0.6"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.Extensions.Logging.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/9.0.6": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "Microsoft.Extensions.Options/9.0.6": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Primitives": "9.0.9"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.Extensions.Options.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "Microsoft.Extensions.Options.ConfigurationExtensions/9.0.6": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.9",
+          "Microsoft.Extensions.Configuration.Binder": "9.0.9",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6",
+          "Microsoft.Extensions.Options": "9.0.6",
+          "Microsoft.Extensions.Primitives": "9.0.9"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.625.26613"
+          }
+        }
+      },
+      "Microsoft.Extensions.Primitives/9.0.9": {
+        "runtime": {
+          "lib/net9.0/Microsoft.Extensions.Primitives.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.925.41916"
+          }
+        }
+      },
+      "protobuf-net/3.2.56": {
+        "dependencies": {
+          "protobuf-net.Core": "3.2.56"
+        },
+        "runtime": {
+          "lib/net8.0/protobuf-net.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.2.56.57311"
+          }
+        }
+      },
+      "protobuf-net.Core/3.2.56": {
+        "runtime": {
+          "lib/net8.0/protobuf-net.Core.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.2.56.57311"
+          }
+        }
+      },
+      "System.Text.Json/9.0.6": {},
+      "SpreadAggregator.Application/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.9",
+          "Microsoft.Extensions.Configuration.Binder": "9.0.9",
+          "SpreadAggregator.Domain": "1.0.0"
+        },
+        "runtime": {
+          "SpreadAggregator.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "SpreadAggregator.Domain/1.0.0": {
+        "runtime": {
+          "SpreadAggregator.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SpreadAggregator.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Binance.Net/11.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+JUs3jgah2ZrUAsg2ZxvTSoiqwR2m9RKjMvVGvZhG4MJZbaTT7zeFPbSApkxRgp5VT7FKEh9T78/J2bblMSf5Q==",
+      "path": "binance.net/11.8.0",
+      "hashPath": "binance.net.11.8.0.nupkg.sha512"
+    },
+    "Bybit.Net/5.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Wm8qEl14nhOGhJvWiWQhTthUXQEE/eWEfefVXnDT9Fm3ClhABo/023S5hc51xxzfOBwagPEsH6fKfHAKYU2Sgg==",
+      "path": "bybit.net/5.9.0",
+      "hashPath": "bybit.net.5.9.0.nupkg.sha512"
+    },
+    "CryptoExchange.Net/9.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7Ivf2wQJTXHM90Ev7vM47qEInh4bjk2MZBlgUzwINNujwG9vNRa2tsq2P8jIxxq6GkqbLA/VR4ZN4FTjUpSb6g==",
+      "path": "cryptoexchange.net/9.9.0",
+      "hashPath": "cryptoexchange.net.9.9.0.nupkg.sha512"
+    },
+    "CryptoExchange.Net.Protobuf/9.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AmA66o24/8VMClF1Ivd40JoCdGU1hbQXJ7h6P/KgrpWhTxqCcESLQ4zisHRzB1GExKMQ5+J224vOSGiGuDhJ9Q==",
+      "path": "cryptoexchange.net.protobuf/9.8.0",
+      "hashPath": "cryptoexchange.net.protobuf.9.8.0.nupkg.sha512"
+    },
+    "Fleck/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bPLXn6QbLAFoviur6XbrKB0Zn6x04E8VibHXyHZeJsoC7bkUl5DVtzM5cZgDuqHkIrBqAXJyTNJwSNIc6wBJ2Q==",
+      "path": "fleck/1.2.0",
+      "hashPath": "fleck.1.2.0.nupkg.sha512"
+    },
+    "GateIo.Net/2.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3D4LPSzf/ZtcOq0jxZGOwUiFHpkr5WV0Q5FJ60B2j10NiUUeomqUnZG7fPtzHccm5qUzTlly6H9pq1bkWFDOFQ==",
+      "path": "gateio.net/2.10.0",
+      "hashPath": "gateio.net.2.10.0.nupkg.sha512"
+    },
+    "JK.Mexc.Net/3.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VNwR0foNFgaZ/fNe8Y4K4JbecDJpEKfi8J6oO8IgM9XjUFjDzUy9Yx0HwwJTYWQ+j7JkAvZ6+frtbOv+rwfrFA==",
+      "path": "jk.mexc.net/3.9.0",
+      "hashPath": "jk.mexc.net.3.9.0.nupkg.sha512"
+    },
+    "JK.OKX.Net/3.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Nsm20w2IYZS7kn6CgNkjV1OvPriVwLPq8luoV8u2CLyarg2nV2Trp4Iyed6OhwWuW5jZJ5RhFxszR4wEXDbFGA==",
+      "path": "jk.okx.net/3.8.0",
+      "hashPath": "jk.okx.net.3.8.0.nupkg.sha512"
+    },
+    "Kucoin.Net/7.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CSqI0Wjsus7FZrK4Gj1cR04tPo7XyczFoSYxXp392Ti3A+ZY9mPMLk3Dg/KQw1gPrHrerJitVVJWjQyxqvV5VQ==",
+      "path": "kucoin.net/7.8.0",
+      "hashPath": "kucoin.net.7.8.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Configuration/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VWB5jdkxHsRiuoniTqwOL32R4OWyp5If/bAucLjRJczRVNcwb8iCXKLjn3Inv8fv+jHMVMnvQLg7xhSys+y5PA==",
+      "path": "microsoft.extensions.configuration/9.0.6",
+      "hashPath": "microsoft.extensions.configuration.9.0.6.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Configuration.Abstractions/9.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-p5RKAY9POvs3axwA/AQRuJeM8AHuE8h4qbP1NxQeGm0ep46aXz1oCLAp/oOYxX1GsjStgdhHrN3XXLLXr0+b3w==",
+      "path": "microsoft.extensions.configuration.abstractions/9.0.9",
+      "hashPath": "microsoft.extensions.configuration.abstractions.9.0.9.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Configuration.Binder/9.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6SIp/6Bngk4jm2W36JekZbiIbFPdE/eMUtrJEqIqHGpd1zar3jvgnwxnpWQfzUiGrkyY8q8s6V82zkkEZozghA==",
+      "path": "microsoft.extensions.configuration.binder/9.0.9",
+      "hashPath": "microsoft.extensions.configuration.binder.9.0.9.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vS65HMo5RS10DD543fknsyVDxihMcVxVn3/hNaILgBxWYnOLxWIeCIO9X0QFuCvPRNjClvXe9Aj8KaQNx7vFkQ==",
+      "path": "microsoft.extensions.dependencyinjection/9.0.6",
+      "hashPath": "microsoft.extensions.dependencyinjection.9.0.6.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0Zn6nR/6g+90MxskZyOOMPQvnPnrrGu6bytPwkV+azDcTtCSuQ1+GJUrg8Klmnrjk1i6zMpw2lXijl+tw7Q3kA==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/9.0.6",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.9.0.6.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Diagnostics/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mIqCzZseDK9SqTRy4LxtjLwjlUu6aH5UdA6j0vgVER14yki9oRqLF+SmBiF6OlwsBSeL6dMQ8dmq02JMeE2puQ==",
+      "path": "microsoft.extensions.diagnostics/9.0.6",
+      "hashPath": "microsoft.extensions.diagnostics.9.0.6.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Diagnostics.Abstractions/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GIoXX7VDcTEsNM6yvffTBaOwnPQELGI5dzExR7L2O7AUkDsHBYIZawUbuwfq3cYzz8dIAAJotQYJMzH7qy27Ng==",
+      "path": "microsoft.extensions.diagnostics.abstractions/9.0.6",
+      "hashPath": "microsoft.extensions.diagnostics.abstractions.9.0.6.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Http/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YoCEkjHHeeKsOzaJaGKuwsi1Ijckkm/+bv5RXmsKA0/qW4veY0eh5lVtkOXxkqQbVRuK3sObhxRM0UeuF6yAgA==",
+      "path": "microsoft.extensions.http/9.0.6",
+      "hashPath": "microsoft.extensions.http.9.0.6.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XBzjitTFaQhF8EbJ645vblZezV1p52ePTxKHoVkRidHF11Xkjxg94qr0Rvp2qyxK2vBJ4OIZ41NB15YUyxTGMQ==",
+      "path": "microsoft.extensions.logging/9.0.6",
+      "hashPath": "microsoft.extensions.logging.9.0.6.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging.Abstractions/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LFnyBNK7WtFmKdnHu3v0HOYQ8BcjYuy0jdC9pgCJ/rbLKoJEG9/dBzSKMEeeWDbDeoWS0TIxOC8a9CM5ufca3A==",
+      "path": "microsoft.extensions.logging.abstractions/9.0.6",
+      "hashPath": "microsoft.extensions.logging.abstractions.9.0.6.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Options/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wUPhNM1zsI58Dy10xRdF2+pnsisiUuETg5ZBncyAEEUm/CQ9Q1vmivyUWH8RDbAlqyixf2dJNQ2XZb7HsKUEQw==",
+      "path": "microsoft.extensions.options/9.0.6",
+      "hashPath": "microsoft.extensions.options.9.0.6.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Options.ConfigurationExtensions/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2lnp8nrvfzyp+5zvfeULm/hkZsDsKkl2ziBt5T8EZKoON5q+XRpRLoWcSPo8mP7GNZXpxKMBVjFNIZNbBIcnRw==",
+      "path": "microsoft.extensions.options.configurationextensions/9.0.6",
+      "hashPath": "microsoft.extensions.options.configurationextensions.9.0.6.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Primitives/9.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z4pyMePOrl733ltTowbN565PxBw1oAr8IHmIXNDiDqd22nFpYltX9KhrNC/qBWAG1/Zx5MHX+cOYhWJQYCO/iw==",
+      "path": "microsoft.extensions.primitives/9.0.9",
+      "hashPath": "microsoft.extensions.primitives.9.0.9.nupkg.sha512"
+    },
+    "protobuf-net/3.2.56": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4IPJeTYAMNewlN8MDaFkcmR/9hLhJeo9eARnTh104zh7mf+vXT2gu5MUfUnkSQU+CH578Q6vcdU7LQDQPG6eaw==",
+      "path": "protobuf-net/3.2.56",
+      "hashPath": "protobuf-net.3.2.56.nupkg.sha512"
+    },
+    "protobuf-net.Core/3.2.56": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-d6QOukTpDzs7zZv9tPnBZMtvHDNeHJQXUhMx54g4urUQsXK3oo9U70H9HvklYq7hlQ4A7AHJl7EVEqyCXXIl8Q==",
+      "path": "protobuf-net.core/3.2.56",
+      "hashPath": "protobuf-net.core.3.2.56.nupkg.sha512"
+    },
+    "System.Text.Json/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-h+ZtYTyTnTh5Ju6mHCKb3FPGx4ylJZgm9W7Y2psUnkhQRPMOIxX+TCN0ZgaR/+Yea+93XHWAaMzYTar1/EHIPg==",
+      "path": "system.text.json/9.0.6",
+      "hashPath": "system.text.json.9.0.6.nupkg.sha512"
+    },
+    "SpreadAggregator.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SpreadAggregator.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
