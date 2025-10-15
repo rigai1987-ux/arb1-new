@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SpreadAggregator.Application\SpreadAggregator.Application.csproj" />
+    <ProjectReference Include="..\..\docs\jkorf\Bitget.Net-main\Bitget.Net\Bitget.Net.csproj" />
   </ItemGroup>
 
   <ItemGroup>

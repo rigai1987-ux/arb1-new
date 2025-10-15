@@ -56,6 +56,7 @@ class Program
                 services.AddSingleton<IExchangeClient, GateIoExchangeClient>();
                 services.AddSingleton<IExchangeClient, KucoinExchangeClient>();
                 services.AddSingleton<IExchangeClient, OkxExchangeClient>();
+                services.AddSingleton<IExchangeClient, BitgetExchangeClient>();
 
                 services.AddSingleton<OrchestrationService>();
             });

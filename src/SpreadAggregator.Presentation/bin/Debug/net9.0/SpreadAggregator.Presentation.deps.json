@@ -11,7 +11,8 @@
           "Microsoft.Extensions.Configuration.Json": "9.0.9",
           "Microsoft.Extensions.Hosting": "9.0.9",
           "SpreadAggregator.Application": "1.0.0",
-          "SpreadAggregator.Infrastructure": "1.0.0"
+          "SpreadAggregator.Infrastructure": "1.0.0",
+          "Bitget.Net": "2.8.0.0"
         },
         "runtime": {
           "SpreadAggregator.Presentation.dll": {}
@@ -534,6 +535,17 @@
         }
       },
       "System.Text.Json/9.0.6": {},
+      "JK.Bitget.Net/2.8.0": {
+        "dependencies": {
+          "CryptoExchange.Net": "9.9.0"
+        },
+        "runtime": {
+          "Bitget.Net.dll": {
+            "assemblyVersion": "2.8.0.0",
+            "fileVersion": "2.8.0.0"
+          }
+        }
+      },
       "SpreadAggregator.Application/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "9.0.9",
@@ -562,6 +574,7 @@
           "CryptoExchange.Net": "9.9.0",
           "Fleck": "1.2.0",
           "GateIo.Net": "2.10.0",
+          "JK.Bitget.Net": "2.8.0",
           "JK.Mexc.Net": "3.9.0",
           "JK.OKX.Net": "3.8.0",
           "Kucoin.Net": "7.8.0",
@@ -571,6 +584,14 @@
           "SpreadAggregator.Infrastructure.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Bitget.Net/2.8.0.0": {
+        "runtime": {
+          "Bitget.Net.dll": {
+            "assemblyVersion": "2.8.0.0",
+            "fileVersion": "2.8.0.0"
           }
         }
       }
@@ -869,6 +890,11 @@
       "path": "system.text.json/9.0.6",
       "hashPath": "system.text.json.9.0.6.nupkg.sha512"
     },
+    "JK.Bitget.Net/2.8.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "SpreadAggregator.Application/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -881,6 +907,11 @@
     },
     "SpreadAggregator.Infrastructure/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Bitget.Net/2.8.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

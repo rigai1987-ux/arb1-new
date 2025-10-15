@@ -64,3 +64,6 @@ C:\visual projects\arb1\src\SpreadAggregator.Presentation\obj\Debug\net9.0\refin
 C:\visual projects\arb1\src\SpreadAggregator.Presentation\obj\Debug\net9.0\SpreadAggregator.Presentation.pdb
 C:\visual projects\arb1\src\SpreadAggregator.Presentation\obj\Debug\net9.0\SpreadAggregator.Presentation.genruntimeconfig.cache
 C:\visual projects\arb1\src\SpreadAggregator.Presentation\obj\Debug\net9.0\ref\SpreadAggregator.Presentation.dll
+C:\visual projects\arb1\src\SpreadAggregator.Presentation\bin\Debug\net9.0\Bitget.Net.dll
+C:\visual projects\arb1\src\SpreadAggregator.Presentation\bin\Debug\net9.0\Bitget.Net.pdb
+C:\visual projects\arb1\src\SpreadAggregator.Presentation\bin\Debug\net9.0\Bitget.Net.xml

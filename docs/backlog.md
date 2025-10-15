@@ -78,3 +78,4 @@
 ### Слой представления (Presentation)
 - [x] Настроить DI-контейнер.
 - [x] Реализовать `Program.cs` для запуска приложения.
+- **Feature:** Implemented Bitget exchange connector.

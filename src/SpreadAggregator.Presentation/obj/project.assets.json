@@ -814,6 +814,19 @@
           "buildTransitive/net8.0/System.Text.Json.targets": {}
         }
       },
+      "JK.Bitget.Net/2.8.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CryptoExchange.Net": "9.9.0"
+        },
+        "compile": {
+          "bin/placeholder/JK.Bitget.Net.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JK.Bitget.Net.dll": {}
+        }
+      },
       "SpreadAggregator.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -848,6 +861,7 @@
           "CryptoExchange.Net": "9.9.0",
           "Fleck": "1.2.0",
           "GateIo.Net": "2.10.0",
+          "JK.Bitget.Net": "2.8.0",
           "JK.Mexc.Net": "3.9.0",
           "JK.OKX.Net": "3.8.0",
           "Kucoin.Net": "7.8.0",
@@ -2058,6 +2072,11 @@
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "JK.Bitget.Net/2.8.0": {
+      "type": "project",
+      "path": "../../docs/jkorf/Bitget.Net-main/Bitget.Net/Bitget.Net.csproj",
+      "msbuildProject": "../../docs/jkorf/Bitget.Net-main/Bitget.Net/Bitget.Net.csproj"
     },
     "SpreadAggregator.Application/1.0.0": {
       "type": "project",
