@@ -207,10 +207,6 @@
             "Kucoin.Net": {
               "target": "Package",
               "version": "[7.8.0, )"
-            },
-            "OKX.Api": {
-              "target": "Package",
-              "version": "[5.5.1013, )"
             }
           },
           "imports": [

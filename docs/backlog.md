@@ -1,5 +1,18 @@
 # Backlog - Агрегатор биржевых спредов
 
+## Спринт 4: Интеграция OKX
+- [ ] **Интеграция с OKX:**
+    - [ ] Добавить пакет `JK.OKX.Net`.
+    - [ ] Создать `OkxExchangeClient`.
+    - [ ] Зарегистрировать `OkxExchangeClient` в DI.
+    - [ ] Обновить `appsettings.json` для поддержки OKX.
+    - [ ] Изучить документацию в `C:\visual projects\arb1\docs\jkorf\OKX.Net-main`.
+
+## Рефакторинг
+- [x] **Удаление OKX:**
+    - [x] Удалена зависимость `OKX.Api` из проекта `SpreadAggregator.Infrastructure`.
+    - [x] Проведена очистка артефактов сборки для полного удаления связанных файлов.
+
 ## Спринт 3: Интеграция KuCoin
 - [x] **Интеграция с KuCoin:**
     - [x] Добавлен пакет `Kucoin.Net`.
