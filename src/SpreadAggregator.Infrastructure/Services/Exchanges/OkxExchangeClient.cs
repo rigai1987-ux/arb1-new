@@ -47,19 +47,17 @@ public class OkxExchangeClient : IExchangeClient
             symbolsList = symbolsList.Take(maxSubscriptions).ToList();
         }
 
-        var result = await _socketClient.UnifiedApi.ExchangeData.SubscribeToOrderBookUpdatesAsync(symbolsList, OKX.Net.Enums.OrderBookType.OrderBook, data =>
+        var result = await _socketClient.UnifiedApi.ExchangeData.SubscribeToTickerUpdatesAsync(symbolsList, data =>
         {
-            var bestBid = data.Data.Bids.FirstOrDefault();
-            var bestAsk = data.Data.Asks.FirstOrDefault();
-
-            if (bestBid != null && bestAsk != null)
+            var ticker = data.Data;
+            if (ticker.BestBidPrice.HasValue && ticker.BestAskPrice.HasValue)
             {
                 onData(new SpreadData
                 {
                     Exchange = ExchangeName,
-                    Symbol = data.Symbol,
-                    BestBid = bestBid.Price,
-                    BestAsk = bestAsk.Price
+                    Symbol = ticker.Symbol,
+                    BestBid = ticker.BestBidPrice.Value,
+                    BestAsk = ticker.BestAskPrice.Value
                 });
             }
         });

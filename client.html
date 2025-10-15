@@ -75,6 +75,21 @@
         function createTableForExchange(exchangeName) {
             const tableWrapper = document.createElement('div');
             tableWrapper.className = 'table-wrapper';
+
+            let headerRow;
+            if (exchangeName === 'OKX') {
+                headerRow = `
+                    <th>Символ</th>
+                    <th>Best Bid</th>
+                    <th>Best Ask</th>
+                `;
+            } else {
+                headerRow = `
+                    <th>Символ</th>
+                    <th>Спред (%)</th>
+                `;
+            }
+
             tableWrapper.innerHTML = `
                 <h2 style="text-align: center; color: #e0e0e0;">
                     ${exchangeName}
@@ -83,8 +98,7 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Символ</th>
-                            <th>Спред (%)</th>
+                            ${headerRow}
                         </tr>
                     </thead>
                     <tbody id="data-table-${exchangeName}"></tbody>
@@ -109,10 +123,18 @@
 
             for (const spread of sortedSpreads) {
                 const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${spread.Symbol}</td>
-                    <td>${spread.SpreadPercentage.toFixed(6)}</td>
-                `;
+                if (exchangeName === 'OKX') {
+                    row.innerHTML = `
+                        <td>${spread.Symbol}</td>
+                        <td>${spread.BestBid.toFixed(8)}</td>
+                        <td>${spread.BestAsk.toFixed(8)}</td>
+                    `;
+                } else {
+                    row.innerHTML = `
+                        <td>${spread.Symbol}</td>
+                        <td>${spread.SpreadPercentage.toFixed(6)}</td>
+                    `;
+                }
                 tableBody.appendChild(row);
             }
         }

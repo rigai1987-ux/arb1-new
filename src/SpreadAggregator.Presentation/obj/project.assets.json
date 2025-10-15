@@ -2147,14 +2147,14 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "c:\\visual projects\\arb1\\docs\\jkorf\\BingX.Net-main\\BingX.Net\\BingX.Net.csproj": {
-              "projectPath": "c:\\visual projects\\arb1\\docs\\jkorf\\BingX.Net-main\\BingX.Net\\BingX.Net.csproj"
+            "C:\\visual projects\\arb1\\docs\\jkorf\\BingX.Net-main\\BingX.Net\\BingX.Net.csproj": {
+              "projectPath": "C:\\visual projects\\arb1\\docs\\jkorf\\BingX.Net-main\\BingX.Net\\BingX.Net.csproj"
             },
             "C:\\visual projects\\arb1\\src\\SpreadAggregator.Application\\SpreadAggregator.Application.csproj": {
               "projectPath": "C:\\visual projects\\arb1\\src\\SpreadAggregator.Application\\SpreadAggregator.Application.csproj"
             },
-            "c:\\visual projects\\arb1\\src\\SpreadAggregator.Infrastructure\\SpreadAggregator.Infrastructure.csproj": {
-              "projectPath": "c:\\visual projects\\arb1\\src\\SpreadAggregator.Infrastructure\\SpreadAggregator.Infrastructure.csproj"
+            "C:\\visual projects\\arb1\\src\\SpreadAggregator.Infrastructure\\SpreadAggregator.Infrastructure.csproj": {
+              "projectPath": "C:\\visual projects\\arb1\\src\\SpreadAggregator.Infrastructure\\SpreadAggregator.Infrastructure.csproj"
             }
           }
         }
