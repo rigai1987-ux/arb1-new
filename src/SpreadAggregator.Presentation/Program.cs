@@ -48,6 +48,7 @@ class Program
 
                 services.AddSingleton<SpreadCalculator>();
                 services.AddSingleton<VolumeFilter>();
+                services.AddSingleton<SpreadDataCache>();
 
                 // Register all exchange clients
                 services.AddSingleton<IExchangeClient, BinanceExchangeClient>();

@@ -1,10 +1,12 @@
 using Microsoft.Extensions.Configuration;
 using SpreadAggregator.Application.Abstractions;
+using SpreadAggregator.Domain.Entities;
 using SpreadAggregator.Domain.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SpreadAggregator.Application.Services;
@@ -16,24 +18,30 @@ public class OrchestrationService
     private readonly VolumeFilter _volumeFilter;
     private readonly IConfiguration _configuration;
     private readonly IEnumerable<IExchangeClient> _exchangeClients;
+    private readonly SpreadDataCache _spreadDataCache;
+    private Timer _broadcastTimer;
 
     public OrchestrationService(
         IWebSocketServer webSocketServer,
         SpreadCalculator spreadCalculator,
         IConfiguration configuration,
         VolumeFilter volumeFilter,
-        IEnumerable<IExchangeClient> exchangeClients)
+        IEnumerable<IExchangeClient> exchangeClients,
+        SpreadDataCache spreadDataCache)
     {
         _webSocketServer = webSocketServer;
         _spreadCalculator = spreadCalculator;
         _configuration = configuration;
         _volumeFilter = volumeFilter;
         _exchangeClients = exchangeClients;
+        _spreadDataCache = spreadDataCache;
     }
 
     public async Task StartAsync()
     {
         _webSocketServer.Start();
+
+        _broadcastTimer = new Timer(BroadcastData, null, TimeSpan.Zero, TimeSpan.FromSeconds(1));
 
         var exchangeNames = _configuration.GetSection("ExchangeSettings:Exchanges").GetChildren().Select(x => x.Key);
         var tasks = new List<Task>();
@@ -81,8 +89,31 @@ public class OrchestrationService
             spreadData.MinVolume = minVolume;
             spreadData.MaxVolume = maxVolume;
 
-            var message = JsonSerializer.Serialize(spreadData);
-            await _webSocketServer.BroadcastAsync(message);
+            _spreadDataCache.Update(spreadData);
         });
+    }
+
+    private void BroadcastData(object state)
+    {
+        var allData = _spreadDataCache.GetAll();
+        if (!allData.Any()) return;
+
+        var package = new SpreadDataPackage();
+        foreach (var data in allData)
+        {
+            package.Data.Add(new List<object>
+            {
+                data.Exchange,
+                data.Symbol,
+                data.BestBid,
+                data.BestAsk,
+                data.SpreadPercentage,
+                data.MinVolume,
+                data.MaxVolume
+            });
+        }
+
+        var message = JsonSerializer.Serialize(package);
+        _webSocketServer.BroadcastAsync(message).GetAwaiter().GetResult();
     }
 }

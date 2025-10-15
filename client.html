@@ -36,17 +36,40 @@
         };
 
         socket.onmessage = (event) => {
-            const data = JSON.parse(event.data);
-            
-            if (!exchanges.has(data.Exchange)) {
-                createTableForExchange(data.Exchange);
-            }
+            const package = JSON.parse(event.data);
+            const fields = package.Fields;
+            const data = package.Data;
 
-            const exchangeData = exchanges.get(data.Exchange);
-            const key = data.Symbol;
-            exchangeData.set(key, data);
+            // Clear existing data
+            exchanges.forEach(map => map.clear());
 
-            renderTable(data.Exchange);
+            // Process new data
+            data.forEach(rowData => {
+                const rowObject = {};
+                fields.forEach((field, index) => {
+                    rowObject[field] = rowData[index];
+                });
+
+                if (!exchanges.has(rowObject.exchange)) {
+                    createTableForExchange(rowObject.exchange);
+                }
+
+                const exchangeData = exchanges.get(rowObject.exchange);
+                exchangeData.set(rowObject.symbol, {
+                    Exchange: rowObject.exchange,
+                    Symbol: rowObject.symbol,
+                    BestBid: rowObject.bestBid,
+                    BestAsk: rowObject.bestAsk,
+                    SpreadPercentage: rowObject.spreadPercentage,
+                    MinVolume: rowObject.minVolume,
+                    MaxVolume: rowObject.maxVolume
+                });
+            });
+
+            // Render all tables
+            exchanges.forEach((_, exchangeName) => {
+                renderTable(exchangeName);
+            });
         };
 
         function createTableForExchange(exchangeName) {
