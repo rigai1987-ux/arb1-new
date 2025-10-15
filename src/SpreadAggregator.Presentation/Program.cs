@@ -8,6 +8,8 @@ using SpreadAggregator.Infrastructure.Services;
 using SpreadAggregator.Infrastructure.Services.Exchanges;
 using System;
 using System.Threading.Tasks;
+using BingX.Net.Interfaces.Clients;
+using BingX.Net.Clients;
 
 namespace SpreadAggregator.Presentation;
 
@@ -57,6 +59,9 @@ class Program
                 services.AddSingleton<IExchangeClient, KucoinExchangeClient>();
                 services.AddSingleton<IExchangeClient, OkxExchangeClient>();
                 services.AddSingleton<IExchangeClient, BitgetExchangeClient>();
+                services.AddSingleton<IExchangeClient, BingXExchangeClient>();
+
+                services.AddBingX();
 
                 services.AddSingleton<OrchestrationService>();
             });

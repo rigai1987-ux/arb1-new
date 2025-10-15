@@ -445,6 +445,19 @@
           "buildTransitive/net8.0/System.Text.Json.targets": {}
         }
       },
+      "JK.BingX.Net/2.8.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CryptoExchange.Net": "9.9.0"
+        },
+        "compile": {
+          "bin/placeholder/JK.BingX.Net.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JK.BingX.Net.dll": {}
+        }
+      },
       "JK.Bitget.Net/2.8.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -1221,6 +1234,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "JK.BingX.Net/2.8.0": {
+      "type": "project",
+      "path": "../../docs/jkorf/BingX.Net-main/BingX.Net/BingX.Net.csproj",
+      "msbuildProject": "../../docs/jkorf/BingX.Net-main/BingX.Net/BingX.Net.csproj"
+    },
     "JK.Bitget.Net/2.8.0": {
       "type": "project",
       "path": "../../docs/jkorf/Bitget.Net-main/Bitget.Net/Bitget.Net.csproj",
@@ -1244,6 +1262,7 @@
       "CryptoExchange.Net >= 9.9.0",
       "Fleck >= 1.2.0",
       "GateIo.Net >= 2.10.0",
+      "JK.BingX.Net >= 2.8.0",
       "JK.Bitget.Net >= 2.8.0",
       "JK.Mexc.Net >= 3.9.0",
       "JK.OKX.Net >= 3.8.0",
@@ -1257,11 +1276,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\visual projects\\arb1\\src\\SpreadAggregator.Infrastructure\\SpreadAggregator.Infrastructure.csproj",
+      "projectUniqueName": "c:\\visual projects\\arb1\\src\\SpreadAggregator.Infrastructure\\SpreadAggregator.Infrastructure.csproj",
       "projectName": "SpreadAggregator.Infrastructure",
-      "projectPath": "C:\\visual projects\\arb1\\src\\SpreadAggregator.Infrastructure\\SpreadAggregator.Infrastructure.csproj",
+      "projectPath": "c:\\visual projects\\arb1\\src\\SpreadAggregator.Infrastructure\\SpreadAggregator.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\Георгий\\.nuget\\packages\\",
-      "outputPath": "C:\\visual projects\\arb1\\src\\SpreadAggregator.Infrastructure\\obj\\",
+      "outputPath": "c:\\visual projects\\arb1\\src\\SpreadAggregator.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Георгий\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -1276,6 +1295,9 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
+            "c:\\visual projects\\arb1\\docs\\jkorf\\BingX.Net-main\\BingX.Net\\BingX.Net.csproj": {
+              "projectPath": "c:\\visual projects\\arb1\\docs\\jkorf\\BingX.Net-main\\BingX.Net\\BingX.Net.csproj"
+            },
             "C:\\visual projects\\arb1\\docs\\jkorf\\Bitget.Net-main\\Bitget.Net\\Bitget.Net.csproj": {
               "projectPath": "C:\\visual projects\\arb1\\docs\\jkorf\\Bitget.Net-main\\Bitget.Net\\Bitget.Net.csproj"
             },

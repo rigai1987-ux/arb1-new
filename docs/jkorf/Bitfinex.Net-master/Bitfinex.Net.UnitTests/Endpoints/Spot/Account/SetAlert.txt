@@ -1,0 +1,10 @@
+POST
+/v2/auth/w/alert/set
+true
+[
+  "price:tETHUSD:185",
+  "price",
+  "tETHUSD", 
+  185,
+  100 
+]

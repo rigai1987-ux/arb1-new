@@ -67,3 +67,6 @@ C:\visual projects\arb1\src\SpreadAggregator.Presentation\obj\Debug\net9.0\ref\S
 C:\visual projects\arb1\src\SpreadAggregator.Presentation\bin\Debug\net9.0\Bitget.Net.dll
 C:\visual projects\arb1\src\SpreadAggregator.Presentation\bin\Debug\net9.0\Bitget.Net.pdb
 C:\visual projects\arb1\src\SpreadAggregator.Presentation\bin\Debug\net9.0\Bitget.Net.xml
+C:\visual projects\arb1\src\SpreadAggregator.Presentation\bin\Debug\net9.0\BingX.Net.dll
+C:\visual projects\arb1\src\SpreadAggregator.Presentation\bin\Debug\net9.0\BingX.Net.pdb
+C:\visual projects\arb1\src\SpreadAggregator.Presentation\bin\Debug\net9.0\BingX.Net.xml
