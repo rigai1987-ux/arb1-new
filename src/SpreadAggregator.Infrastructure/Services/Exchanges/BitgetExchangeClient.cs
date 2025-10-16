@@ -49,7 +49,7 @@ public class BitgetExchangeClient : IExchangeClient
                 onData(new SpreadData
                 {
                     Exchange = ExchangeName,
-                    Symbol = data.Symbol,
+                    Symbol = data.Symbol ?? string.Empty,
                     BestBid = bestBid.Price,
                     BestAsk = bestAsk.Price
                 });

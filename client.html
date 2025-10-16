@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <title>Агрегатор Спредов</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #121212; color: #e0e0e0; margin: 0; padding: 20px; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #121212; color: #e0e0e0; margin: 0; padding: 20px; font-size: 50%; }
         h1 { text-align: center; color: #bb86fc; }
         .tables-container { display: flex; justify-content: space-around; }
         .table-wrapper { width: 48%; }
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #333; }
+        th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid #333; }
         th { background-color: #1f1f1f; color: #bb86fc; }
         tr:nth-child(even) { background-color: #1e1e1e; }
         tr:nth-child(odd) { background-color: #242424; }
@@ -20,7 +20,6 @@
 </head>
 <body>
     <div id="status" class="status disconnected">Disconnected</div>
-    <h1>Агрегатор Биржевых Спредов</h1>
     <div id="tables-container" class="tables-container"></div>
 
     <script>
@@ -76,19 +75,12 @@
             const tableWrapper = document.createElement('div');
             tableWrapper.className = 'table-wrapper';
 
-            let headerRow;
-            if (exchangeName === 'OKX') {
-                headerRow = `
-                    <th>Символ</th>
-                    <th>Best Bid</th>
-                    <th>Best Ask</th>
-                `;
-            } else {
-                headerRow = `
-                    <th>Символ</th>
-                    <th>Спред (%)</th>
-                `;
-            }
+            let headerRow = `
+                <th>Символ</th>
+                <th>Best Bid</th>
+                <th>Best Ask</th>
+                <th>Спред (%)</th>
+            `;
 
             tableWrapper.innerHTML = `
                 <h2 style="text-align: center; color: #e0e0e0;">
@@ -123,18 +115,12 @@
 
             for (const spread of sortedSpreads) {
                 const row = document.createElement('tr');
-                if (exchangeName === 'OKX') {
-                    row.innerHTML = `
-                        <td>${spread.Symbol}</td>
-                        <td>${spread.BestBid.toFixed(8)}</td>
-                        <td>${spread.BestAsk.toFixed(8)}</td>
-                    `;
-                } else {
-                    row.innerHTML = `
-                        <td>${spread.Symbol}</td>
-                        <td>${spread.SpreadPercentage.toFixed(6)}</td>
-                    `;
-                }
+                row.innerHTML = `
+                    <td>${spread.Symbol.replace(/USDT|-|_/g, '')}</td>
+                    <td>${spread.BestBid.toFixed(8)}</td>
+                    <td>${spread.BestAsk.toFixed(8)}</td>
+                    <td>${spread.SpreadPercentage.toFixed(2)}</td>
+                `;
                 tableBody.appendChild(row);
             }
         }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using SpreadAggregator.Application.Abstractions;
 using SpreadAggregator.Application.Services;
 using SpreadAggregator.Domain.Services;
@@ -36,6 +37,11 @@ class Program
                     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                     .AddJsonFile($"appsettings.{env.EnvironmentName}.json", true, true);
             })
+            .ConfigureLogging(logging =>
+            {
+                logging.AddFilter("System.Net.Http.HttpClient", LogLevel.Warning);
+                logging.AddFilter("BingX", LogLevel.Warning);
+            })
             .ConfigureServices((context, services) =>
             {
                 services.AddSingleton<IWebSocketServer>(sp =>
@@ -62,7 +68,6 @@ class Program
                 services.AddSingleton<IExchangeClient, BingXExchangeClient>();
 
                 services.AddBingX();
-
                 services.AddSingleton<OrchestrationService>();
             });
 }

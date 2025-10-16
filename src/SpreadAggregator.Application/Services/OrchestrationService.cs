@@ -63,8 +63,8 @@ public class OrchestrationService
 
     private async Task ProcessExchange(IExchangeClient exchangeClient, string exchangeName)
     {
-        var minVolume = _configuration.GetValue<decimal>($"ExchangeSettings:Exchanges:{exchangeName}:VolumeFilter:MinUsdVolume");
-        var maxVolume = _configuration.GetValue<decimal>($"ExchangeSettings:Exchanges:{exchangeName}:VolumeFilter:MaxUsdVolume");
+        var minVolume = 1500000m;
+        var maxVolume = 100000000000m;
 
         var tickers = (await exchangeClient.GetTickersAsync()).ToList();
         Console.WriteLine($"[{exchangeName}] Received {tickers.Count} tickers.");

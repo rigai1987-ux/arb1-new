@@ -10,13 +10,11 @@ namespace SpreadAggregator.Infrastructure.Services.Exchanges;
 
 public class MexcExchangeClient : IExchangeClient
 {
-    public string ExchangeName => "Mexc";
-    private readonly MexcSocketClient _socketClient;
+    public string ExchangeName => "MEXC";
     private readonly MexcRestClient _restClient;
 
     public MexcExchangeClient()
     {
-        _socketClient = new MexcSocketClient();
         _restClient = new MexcRestClient();
     }
 
@@ -38,35 +36,43 @@ public class MexcExchangeClient : IExchangeClient
 
     public async Task SubscribeToTickersAsync(IEnumerable<string> symbols, Action<SpreadData> onData)
     {
-        // MEXC has a very strict limit on the total number of active subscriptions per connection.
-        // The error "Exceeded maximum subscription limit!" indicates this.
-        // We will cap the total number of subscriptions to a safe value.
-        const int maxTotalSubscriptions = 30;
-        
-        var symbolsToSubscribe = symbols.Take(maxTotalSubscriptions).ToList();
-        if (symbols.Count() > maxTotalSubscriptions)
-        {
-            Console.WriteLine($"[WARNING] [MexcExchangeClient] Attempted to subscribe to {symbols.Count()} symbols, but the limit is {maxTotalSubscriptions}. Subscribing to the first {maxTotalSubscriptions} symbols only.");
-        }
+        // MEXC has a strict limit on the total number of active subscriptions per connection.
+        // To work around this, we create a new socket client when the limit is approached.
+        const int maxSubscriptionsPerConnection = 30; // A safe limit.
+        const int batchSize = 10; // Symbols per subscription message.
+        const int delayBetweenSubscriptions = 1000; // 1 second delay.
 
-        const int batchSize = 10; // A safe number of symbols per single subscription message.
-        const int delayBetweenSubscriptions = 1000; // 1 second delay to avoid rate limiting.
+        var symbolsList = symbols.ToList();
+        var activeSocketClient = new MexcSocketClient(); // Start with a fresh client.
+        var subscriptionsOnCurrentClient = 0;
 
-        for (int i = 0; i < symbolsToSubscribe.Count; i += batchSize)
+        for (int i = 0; i < symbolsList.Count; i += batchSize)
         {
-            var batch = symbolsToSubscribe.Skip(i).Take(batchSize).ToList();
+            var batch = symbolsList.Skip(i).Take(batchSize).ToList();
+
+            // Check if we need a new client for this batch
+            if (subscriptionsOnCurrentClient > 0 && subscriptionsOnCurrentClient + batch.Count >= maxSubscriptionsPerConnection)
+            {
+                Console.WriteLine($"[MexcExchangeClient] Subscription limit for current client reached. Creating a new client.");
+                activeSocketClient = new MexcSocketClient();
+                subscriptionsOnCurrentClient = 0;
+            }
+
             var batchNumber = i / batchSize + 1;
             Console.WriteLine($"[MexcExchangeClient] Subscribing to batch {batchNumber}, containing {batch.Count} symbols.");
 
-            var result = await _socketClient.SpotApi.SubscribeToBookTickerUpdatesAsync(batch, data =>
+            var result = await activeSocketClient.SpotApi.SubscribeToBookTickerUpdatesAsync(batch, data =>
             {
-                onData(new SpreadData
+                if (data.Data != null && data.Symbol != null)
                 {
-                    Exchange = "Mexc",
-                    Symbol = data.Symbol,
-                    BestBid = data.Data.BestBidPrice,
-                    BestAsk = data.Data.BestAskPrice
-                });
+                    onData(new SpreadData
+                    {
+                        Exchange = ExchangeName,
+                        Symbol = data.Symbol,
+                        BestBid = data.Data.BestBidPrice,
+                        BestAsk = data.Data.BestAskPrice
+                    });
+                }
             });
 
             if (!result.Success)
@@ -75,7 +81,8 @@ public class MexcExchangeClient : IExchangeClient
             }
             else
             {
-                Console.WriteLine($"[MexcExchangeClient] Successfully subscribed to batch {batchNumber}.");
+                subscriptionsOnCurrentClient += batch.Count;
+                Console.WriteLine($"[MexcExchangeClient] Successfully subscribed to batch {batchNumber}. Current subscriptions on this client: {subscriptionsOnCurrentClient}.");
                 result.Data.ConnectionLost += () => Console.WriteLine($"[MexcExchangeClient] Connection lost for batch {batchNumber}.");
                 result.Data.ConnectionRestored += (t) => Console.WriteLine($"[MexcExchangeClient] Connection restored for batch {batchNumber} after {t}.");
             }

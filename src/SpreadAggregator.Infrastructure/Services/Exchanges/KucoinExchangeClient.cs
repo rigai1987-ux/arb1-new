@@ -49,13 +49,16 @@ public class KucoinExchangeClient : IExchangeClient
 
         var result = await _socketClient.SpotApi.SubscribeToBookTickerUpdatesAsync(symbolsToSubscribe, data =>
         {
-            onData(new SpreadData
+            if (data.Data?.BestBid != null && data.Data?.BestAsk != null && data.Symbol != null)
             {
-                Exchange = ExchangeName,
-                Symbol = data.Symbol,
-                BestBid = data.Data.BestBid.Price,
-                BestAsk = data.Data.BestAsk.Price
-            });
+                onData(new SpreadData
+                {
+                    Exchange = ExchangeName,
+                    Symbol = data.Symbol,
+                    BestBid = data.Data.BestBid.Price,
+                    BestAsk = data.Data.BestAsk.Price
+                });
+            }
         });
 
         if (!result.Success)

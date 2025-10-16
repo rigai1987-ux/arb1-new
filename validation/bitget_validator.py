@@ -9,7 +9,6 @@ getcontext().prec = 18 # Set precision for Decimal
 C_SHARP_WSS_URL = "ws://127.0.0.1:8181"
 TARGET_EXCHANGE = "Bitget"
 # We will now dynamically determine the symbol
-PRIORITY_SYMBOLS = {"IDOLUSDT", "EGL1USDT", "CLANKERUSDT", "BLESSUSDT"}
 
 # --- Queues for data sharing ---
 csharp_queue = asyncio.Queue()
@@ -28,7 +27,7 @@ async def csharp_client(url, exchange_name):
         try:
             print(f"Attempting to connect to C# WebSocket server at {url}...", flush=True)
             async with websockets.connect(url) as websocket:
-                print("C# client connected. Waiting for data...", flush=True)
+                print(f"C# client connected. Waiting for data from '{exchange_name}'...", flush=True)
                 while True:
                     message = await websocket.recv()
                     package = json.loads(message)
@@ -45,7 +44,7 @@ async def csharp_client(url, exchange_name):
                             symbol = row_object.get("symbol")
                             # Signal the symbol to the ccxt_client if it's the first time
                             if symbol_to_watch_queue.empty():
-                                print(f"C# client detected active symbol: {symbol}. Signaling CCXT client.", flush=True)
+                                print(f"C# client detected active symbol for {exchange_name}: {symbol}. Signaling CCXT client.", flush=True)
                                 await symbol_to_watch_queue.put(symbol)
 
                             # Only queue data for the symbol we are actively watching
@@ -66,12 +65,12 @@ async def ccxt_client(exchange_name):
     """
     Waits for a symbol signal, then connects to CCXT Pro and puts order book data into the queue.
     """
-    print("CCXT client waiting for symbol signal...", flush=True)
+    print(f"CCXT client for {exchange_name} waiting for symbol signal...", flush=True)
     symbol = await symbol_to_watch_queue.get() # This will block until a symbol is available
     print(f"CCXT client received signal. Connecting to {exchange_name} for symbol {symbol}...", flush=True)
     
     exchange = getattr(ccxtpro, exchange_name.lower())()
-    print("CCXT Pro exchange object created.", flush=True)
+    print(f"CCXT Pro {exchange_name} exchange object created.", flush=True)
     while True:
         try:
             orderbook = await exchange.watch_order_book(symbol)
@@ -164,7 +163,7 @@ async def main():
 if __name__ == "__main__":
     print("Script entry point.", flush=True)
     try:
-        print("Starting Dynamic Symbol Validator...", flush=True)
+        print(f"Starting Dynamic Symbol Validator for {TARGET_EXCHANGE}...", flush=True)
         asyncio.run(main())
     except KeyboardInterrupt:
         print("\nValidator stopped by user.", flush=True)
