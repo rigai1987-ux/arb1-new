@@ -11,6 +11,7 @@ using System;
 using System.Threading.Tasks;
 using BingX.Net.Interfaces.Clients;
 using BingX.Net.Clients;
+using Bybit.Net.Clients;
 
 namespace SpreadAggregator.Presentation;
 
@@ -41,6 +42,7 @@ class Program
             {
                 logging.AddFilter("System.Net.Http.HttpClient", LogLevel.Warning);
                 logging.AddFilter("BingX", LogLevel.Warning);
+                logging.AddFilter("Bybit", LogLevel.Debug);
             })
             .ConfigureServices((context, services) =>
             {
@@ -66,8 +68,10 @@ class Program
                 services.AddSingleton<IExchangeClient, OkxExchangeClient>();
                 services.AddSingleton<IExchangeClient, BitgetExchangeClient>();
                 services.AddSingleton<IExchangeClient, BingXExchangeClient>();
+                services.AddSingleton<IExchangeClient, BybitExchangeClient>();
 
                 services.AddBingX();
+                services.AddBybit();
                 services.AddSingleton<OrchestrationService>();
             });
 }

@@ -1,0 +1,193 @@
+PS C:\visual projects\arb1> dotnet run --project src/SpreadAggregator.Presentation/SpreadAggregator.Presentation.csproj
+16.10.2025 8:45:38 [Info] Server started at ws://127.0.0.1:8181 (actual port 8181) 
+dbug: Bybit.RestClient[4008]
+      [Req 9] Sending GET /v5/market/tickers request with body (null), query parameters ?category=spot and headers Accept=[application/json], Referer=[Zx000356]
+dbug: Bybit.RestClient[4001]
+      [Req 9] 200 - Response received in 328ms: [Data only available when OutputOriginal = true]
+[Bybit] Received 686 tickers.
+[Bybit] 135 symbols passed the volume filter.
+[OKX] Received 688 tickers.
+[OKX] 100 symbols passed the volume filter.
+[Bitget] Received 815 tickers.
+[Bitget] 180 symbols passed the volume filter.
+dbug: Bybit.SocketClient[3011]
+      [Sckt 1] created for wss://stream.bybit.com/v5/public/spot
+dbug: Bybit.SocketClient[2019]
+      [Sckt 1] adding new subscription with id 15, total subscriptions on connection: 1
+dbug: Bybit.SocketClient[1000]
+      [Sckt 1] connecting
+[Kucoin] Received 1313 tickers.
+[Kucoin] 147 symbols passed the volume filter.
+[WARNING] [KucoinExchangeClient] Attempted to subscribe to 147 symbols, but the limit is 100. Subscribing to the first 100 symbols only.
+[Mexc] Received 2284 tickers.
+[Mexc] 196 symbols passed the volume filter.
+[MexcExchangeClient] Subscribing to batch 1, containing 10 symbols.
+[Binance] Received 3353 tickers.
+[Binance] 279 symbols passed the volume filter.
+[BinanceExchangeClient] Subscribing to batch 1, containing 100 symbols.
+dbug: Bybit.SocketClient[1002]
+      [Sckt 1] connected to wss://stream.bybit.com/v5/public/spot
+dbug: Bybit.SocketClient[2001]
+      [Sckt 1] status changed from None to Connected
+dbug: Bybit.SocketClient[1003]
+      [Sckt 1] starting processing tasks
+dbug: Bybit.SocketClient[1026]
+      [Sckt 1] starting task checking for no data received for 00:00:30
+warn: Bybit.SocketClient[3002]
+      [Sckt 1] failed to subscribe: [ServerError.Unknown] args size >10
+dbug: Bybit.SocketClient[2015]
+      [Sckt 1] closing subscription 15
+dbug: Bybit.SocketClient[2001]
+      [Sckt 1] status changed from Connected to Closing
+dbug: Bybit.SocketClient[2018]
+      [Sckt 1] closing as there are no more subscriptions
+dbug: Bybit.SocketClient[1011]
+      [Sckt 1] closing
+dbug: Bybit.SocketClient[1028]
+      [Sckt 1] received `Close` message confirming our close request, CloseStatus: NormalClosure, CloseStatusDescription:     
+dbug: Bybit.SocketClient[1025]
+      [Sckt 1] receive loop finished
+dbug: Bybit.SocketClient[1018]
+      [Sckt 1] send loop finished
+dbug: Bybit.SocketClient[1004]
+      [Sckt 1] processing tasks finished
+dbug: Bybit.SocketClient[2001]
+      [Sckt 1] status changed from Closing to Closed
+dbug: Bybit.SocketClient[1012]
+      [Sckt 1] closed
+dbug: Bybit.SocketClient[1013]
+      [Sckt 1] disposing
+[ERROR] [BybitExchangeClient] Failed to subscribe: [ServerError.Unknown] args size >10
+[OkxExchangeClient] Successfully subscribed to 100 symbols.
+[BingX] Received 1100 tickers.
+[BingX] 52 symbols passed the volume filter.
+[MexcExchangeClient] Successfully subscribed to batch 1. Current subscriptions on this client: 10.
+[BitgetExchangeClient] Successfully subscribed to 180 symbols.
+[KucoinExchangeClient] Successfully subscribed to 100 symbols.
+[GateIo] Received 2618 tickers.
+[GateIo] 196 symbols passed the volume filter.
+[GateIoExchangeClient] Subscribing to batch 1, containing 10 symbols.
+[MexcExchangeClient] Subscribing to batch 2, containing 10 symbols.
+[MexcExchangeClient] Successfully subscribed to batch 2. Current subscriptions on this client: 20.
+[BinanceExchangeClient] Successfully subscribed to batch 1.
+[BinanceExchangeClient] Subscribing to batch 2, containing 100 symbols.
+[MexcExchangeClient] Subscription limit for current client reached. Creating a new client.
+[MexcExchangeClient] Subscribing to batch 3, containing 10 symbols.
+[GateIoExchangeClient] Successfully subscribed to batch 1.
+[BinanceExchangeClient] Successfully subscribed to batch 2.
+[BinanceExchangeClient] Subscribing to batch 3, containing 79 symbols.
+[GateIoExchangeClient] Subscribing to batch 2, containing 10 symbols.
+[GateIoExchangeClient] Successfully subscribed to batch 2.
+[MexcExchangeClient] Successfully subscribed to batch 3. Current subscriptions on this client: 10.
+[GateIoExchangeClient] Subscribing to batch 3, containing 10 symbols.
+[MexcExchangeClient] Subscribing to batch 4, containing 10 symbols.
+[BinanceExchangeClient] Successfully subscribed to batch 3.
+[MexcExchangeClient] Successfully subscribed to batch 4. Current subscriptions on this client: 20.
+[GateIoExchangeClient] Successfully subscribed to batch 3.
+[MexcExchangeClient] Subscription limit for current client reached. Creating a new client.
+[MexcExchangeClient] Subscribing to batch 5, containing 10 symbols.
+[GateIoExchangeClient] Subscribing to batch 4, containing 10 symbols.
+[GateIoExchangeClient] Successfully subscribed to batch 4.
+[MexcExchangeClient] Successfully subscribed to batch 5. Current subscriptions on this client: 10.
+[GateIoExchangeClient] Subscribing to batch 5, containing 10 symbols.
+[GateIoExchangeClient] Successfully subscribed to batch 5.
+[MexcExchangeClient] Subscribing to batch 6, containing 10 symbols.
+[MexcExchangeClient] Successfully subscribed to batch 6. Current subscriptions on this client: 20.
+[GateIoExchangeClient] Subscribing to batch 6, containing 10 symbols.
+[GateIoExchangeClient] Successfully subscribed to batch 6.
+[MexcExchangeClient] Subscription limit for current client reached. Creating a new client.
+[MexcExchangeClient] Subscribing to batch 7, containing 10 symbols.
+[GateIoExchangeClient] Subscribing to batch 7, containing 10 symbols.
+[GateIoExchangeClient] Successfully subscribed to batch 7.
+[MexcExchangeClient] Successfully subscribed to batch 7. Current subscriptions on this client: 10.
+[GateIoExchangeClient] Subscribing to batch 8, containing 10 symbols.
+[MexcExchangeClient] Subscribing to batch 8, containing 10 symbols.
+[GateIoExchangeClient] Successfully subscribed to batch 8.
+[MexcExchangeClient] Successfully subscribed to batch 8. Current subscriptions on this client: 20.
+[GateIoExchangeClient] Subscribing to batch 9, containing 10 symbols.
+[MexcExchangeClient] Subscription limit for current client reached. Creating a new client.
+[MexcExchangeClient] Subscribing to batch 9, containing 10 symbols.
+[GateIoExchangeClient] Successfully subscribed to batch 9.
+[MexcExchangeClient] Successfully subscribed to batch 9. Current subscriptions on this client: 10.
+[MexcExchangeClient] Subscription limit for current client reached. Creating a new client.
+[MexcExchangeClient] Subscribing to batch 9, containing 10 symbols.
+[GateIoExchangeClient] Successfully subscribed to batch 9.
+[MexcExchangeClient] Successfully subscribed to batch 9. Current subscriptions on this client: 10.
+[GateIoExchangeClient] Successfully subscribed to batch 9.
+[MexcExchangeClient] Successfully subscribed to batch 9. Current subscriptions on this client: 10.
+[GateIoExchangeClient] Subscribing to batch 10, containing 10 symbols.
+[GateIoExchangeClient] Successfully subscribed to batch 10.
+[MexcExchangeClient] Subscribing to batch 10, containing 10 symbols.
+[MexcExchangeClient] Successfully subscribed to batch 10. Current subscriptions on this client: 20.
+[GateIoExchangeClient] Subscribing to batch 11, containing 10 symbols.
+[MexcExchangeClient] Subscription limit for current client reached. Creating a new client.
+[MexcExchangeClient] Subscribing to batch 11, containing 10 symbols.
+[GateIoExchangeClient] Successfully subscribed to batch 11.
+[GateIoExchangeClient] Subscribing to batch 10, containing 10 symbols.
+[GateIoExchangeClient] Successfully subscribed to batch 10.
+[MexcExchangeClient] Subscribing to batch 10, containing 10 symbols.
+[MexcExchangeClient] Successfully subscribed to batch 10. Current subscriptions on this client: 20.
+[GateIoExchangeClient] Subscribing to batch 11, containing 10 symbols.
+[MexcExchangeClient] Subscription limit for current client reached. Creating a new client.
+[MexcExchangeClient] Subscribing to batch 11, containing 10 symbols.
+[GateIoExchangeClient] Successfully subscribed to batch 11.
+[MexcExchangeClient] Successfully subscribed to batch 10. Current subscriptions on this client: 20.
+[GateIoExchangeClient] Subscribing to batch 11, containing 10 symbols.
+[MexcExchangeClient] Subscription limit for current client reached. Creating a new client.
+[MexcExchangeClient] Subscribing to batch 11, containing 10 symbols.
+[GateIoExchangeClient] Successfully subscribed to batch 11.
+[MexcExchangeClient] Successfully subscribed to batch 11. Current subscriptions on this client: 10.
+[GateIoExchangeClient] Subscribing to batch 12, containing 10 symbols.
+[MexcExchangeClient] Subscribing to batch 12, containing 10 symbols.
+[MexcExchangeClient] Subscribing to batch 11, containing 10 symbols.
+[GateIoExchangeClient] Successfully subscribed to batch 11.
+[MexcExchangeClient] Successfully subscribed to batch 11. Current subscriptions on this client: 10.
+[GateIoExchangeClient] Subscribing to batch 12, containing 10 symbols.
+[MexcExchangeClient] Subscribing to batch 12, containing 10 symbols.
+[MexcExchangeClient] Successfully subscribed to batch 11. Current subscriptions on this client: 10.
+[GateIoExchangeClient] Subscribing to batch 12, containing 10 symbols.
+[MexcExchangeClient] Subscribing to batch 12, containing 10 symbols.
+[GateIoExchangeClient] Successfully subscribed to batch 12.
+[MexcExchangeClient] Successfully subscribed to batch 12. Current subscriptions on this client: 20.
+[GateIoExchangeClient] Subscribing to batch 13, containing 10 symbols.
+[MexcExchangeClient] Subscription limit for current client reached. Creating a new client.
+[MexcExchangeClient] Subscribing to batch 13, containing 10 symbols.
+[GateIoExchangeClient] Successfully subscribed to batch 13.
+[GateIoExchangeClient] Subscribing to batch 14, containing 10 symbols.
+[MexcExchangeClient] Successfully subscribed to batch 13. Current subscriptions on this client: 10.
+[GateIoExchangeClient] Successfully subscribed to batch 14.
+[MexcExchangeClient] Subscribing to batch 14, containing 10 symbols.
+[GateIoExchangeClient] Subscribing to batch 15, containing 10 symbols.
+[MexcExchangeClient] Successfully subscribed to batch 14. Current subscriptions on this client: 20.
+[GateIoExchangeClient] Successfully subscribed to batch 15.
+[MexcExchangeClient] Subscription limit for current client reached. Creating a new client.
+[MexcExchangeClient] Subscribing to batch 15, containing 10 symbols.
+[GateIoExchangeClient] Subscribing to batch 16, containing 10 symbols.
+[GateIoExchangeClient] Successfully subscribed to batch 16.
+[MexcExchangeClient] Successfully subscribed to batch 15. Current subscriptions on this client: 10.
+[GateIoExchangeClient] Subscribing to batch 17, containing 10 symbols.
+[GateIoExchangeClient] Successfully subscribed to batch 17.
+[MexcExchangeClient] Subscribing to batch 16, containing 10 symbols.
+[MexcExchangeClient] Successfully subscribed to batch 16. Current subscriptions on this client: 20.
+[GateIoExchangeClient] Subscribing to batch 18, containing 10 symbols.
+[GateIoExchangeClient] Successfully subscribed to batch 18.
+[MexcExchangeClient] Subscription limit for current client reached. Creating a new client.
+[MexcExchangeClient] Subscribing to batch 17, containing 10 symbols.
+[GateIoExchangeClient] Subscribing to batch 19, containing 10 symbols.
+[GateIoExchangeClient] Successfully subscribed to batch 19.
+[MexcExchangeClient] Successfully subscribed to batch 17. Current subscriptions on this client: 10.
+[GateIoExchangeClient] Subscribing to batch 20, containing 6 symbols.
+[MexcExchangeClient] Subscribing to batch 18, containing 10 symbols.
+[GateIoExchangeClient] Successfully subscribed to batch 20.
+[MexcExchangeClient] Successfully subscribed to batch 18. Current subscriptions on this client: 20.
+[MexcExchangeClient] Subscription limit for current client reached. Creating a new client.
+[MexcExchangeClient] Subscribing to batch 19, containing 10 symbols.
+[MexcExchangeClient] Successfully subscribed to batch 19. Current subscriptions on this client: 10.
+[MexcExchangeClient] Subscribing to batch 20, containing 6 symbols.
+[MexcExchangeClient] Successfully subscribed to batch 20. Current subscriptions on this client: 16.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\visual projects\arb1
