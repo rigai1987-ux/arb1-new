@@ -89,6 +89,7 @@ public class OrchestrationService
             spreadData.MinVolume = minVolume;
             spreadData.MaxVolume = maxVolume;
 
+            spreadData.Timestamp = DateTime.UtcNow;
             _spreadDataCache.Update(spreadData);
         });
     }

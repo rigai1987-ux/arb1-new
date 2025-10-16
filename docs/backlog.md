@@ -1,5 +1,14 @@
 # Backlog - Агрегатор биржевых спредов
 
+## Спринт 6: Добавление серверного Timestamp
+- [x] **Задача 1: Реализация Timestamp**
+    - [x] **Цель:** Добавить серверное время (timestamp) к данным, получаемым от каждой биржи, для более точного анализа и отладки.
+    - [x] **Действия:**
+        - [x] Добавить свойство `Timestamp` (тип `DateTime`) в класс `TickerData`.
+        - [x] Написать TDD-тест, проверяющий, что `Timestamp` корректно устанавливается.
+        - [x] Обновить все реализации `IExchangeClient` (`BinanceExchangeClient`, `BingXExchangeClient`, и т.д.), чтобы они устанавливали `DateTime.UtcNow` в поле `Timestamp` при получении данных.
+        - [x] Проверить, что данные с `Timestamp` корректно передаются до `OrchestrationService`.
+
 ## Спринт 5: Интеграция Bybit
 - [x] **Задача 1: Подготовка и настройка**
     - [x] Добавить NuGet-пакет `Bybit.Net` в проект `SpreadAggregator.Infrastructure`.

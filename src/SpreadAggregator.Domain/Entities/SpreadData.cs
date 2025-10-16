@@ -31,4 +31,5 @@ public class SpreadData
     public decimal SpreadPercentage { get; set; }
     public decimal MinVolume { get; set; }
     public decimal MaxVolume { get; set; }
+    public DateTime Timestamp { get; set; }
 }

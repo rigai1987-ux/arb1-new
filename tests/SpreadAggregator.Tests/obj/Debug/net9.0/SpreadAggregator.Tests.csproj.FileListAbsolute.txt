@@ -106,3 +106,8 @@ C:\visual projects\arb1\tests\SpreadAggregator.Tests\obj\Debug\net9.0\refint\Spr
 C:\visual projects\arb1\tests\SpreadAggregator.Tests\obj\Debug\net9.0\SpreadAggregator.Tests.pdb
 C:\visual projects\arb1\tests\SpreadAggregator.Tests\obj\Debug\net9.0\SpreadAggregator.Tests.genruntimeconfig.cache
 C:\visual projects\arb1\tests\SpreadAggregator.Tests\obj\Debug\net9.0\ref\SpreadAggregator.Tests.dll
+c:\visual projects\arb1\tests\SpreadAggregator.Tests\bin\Debug\net9.0\Castle.Core.dll
+c:\visual projects\arb1\tests\SpreadAggregator.Tests\bin\Debug\net9.0\Moq.dll
+c:\visual projects\arb1\tests\SpreadAggregator.Tests\bin\Debug\net9.0\System.Diagnostics.EventLog.dll
+c:\visual projects\arb1\tests\SpreadAggregator.Tests\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
+c:\visual projects\arb1\tests\SpreadAggregator.Tests\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll

@@ -9,4 +9,5 @@ public class TickerData
     public decimal QuoteVolume { get; init; }
     public decimal BestBid { get; init; }
     public decimal BestAsk { get; init; }
+    public DateTime Timestamp { get; set; }
 }
